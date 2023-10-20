@@ -1,654 +1,123 @@
-<html lang="en" class="halloween"><head>
+<html lang="en-us"><head>
     <meta charset="utf-8">
-    <title>Ruby</title> 
-    <link rel="stylesheet" href="css/globals.css">
-    <script src="js/dynamic/dynamic.config.js" defer=""></script>
-    <script src="uv/uv.bundle.js" defer=""></script>
-    <script src="uv/uv.config.js" defer=""></script>
-    <script src="js/rh/rh.js" defer=""></script>
-    <script src="js/sw/register.js" defer=""></script>
-    <link rel="manifest" href="manifest.json">
-    <script src="js/search.js" defer=""></script>
-    <script src="js/index.js" defer=""></script>
-    <script src="js/lib/localforage.js" defer=""></script>
-    <script src="js/register.js" defer=""></script>
-    <script src="js/bare.js" defer=""></script>
-    <script src="js/lib/sweetalert2.js" defer=""></script>
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" id="favicon">
-    <!-- Metadata -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Ruby">
-    <meta name="author" content="Ruby Network">
-    <meta name="title" content="Ruby">
-    <meta name="description" content="Ruby (V3) is customizable, free, and fast.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://rubynetwork.tech/">
-    <meta property="og:title" content="Ruby">
-    <meta property="og:description" content="Ruby (V3) is customizable, free, and fast.">
-    <meta property="og:image" content="https://user-images.githubusercontent.com/73721704/210157935-6aa8ec46-6fa4-4dd5-956f-6bfe351de42c.png">
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://rubynetwork.tech">
-    <meta property="twitter:title" content="Ruby">
-    <meta property="twitter:description" content="Ruby (V3) is customizable, free, and fast.">
-    <meta property="twitter:image" content="https://user-images.githubusercontent.com/73721704/210157935-6aa8ec46-6fa4-4dd5-956f-6bfe351de42c.png">
-    <!-- End Metadata -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/chrome-tabs/chrome-tabs.css">
-    <script src="js/chrome-tabs/draggabilly.pkgd.min.js" defer=""></script>
-    <script src="js/chrome-tabs/chrome-tabs.js" defer=""></script>
-    <script src="js/tabs.js" defer=""></script>
-    <link rel="stylesheet" href="font-awesome/icons/css/all.css">
-    <script src="js/utils.js" defer=""></script>
-    <script src="js/pages.js" defer=""></script>
-    <script src="js/controls.js" defer=""></script>
-    <script src="js/notify.js" defer=""></script>
-    <script src="js/settings.js" defer=""></script>
-    <script src="js/games.js" defer=""></script>
-    <script src="js/omnibox.js" defer=""></script>
-    <script src="js/updates.js" defer=""></script>
+    <title>1v1.LOL | Building Simulator, Battle Royale &amp; Shooting Game</title>
+	<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+	<script type="text/javascript" async="" __uv-attr-src="https://ssl.cdne.cpmstar.com/cached/zonemasters/cpmstarjsgameapi.js?ver=1287" src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-sql%2Ccfng.aposvap.aoo%2Faaahgd-zmngmcsveps-crmqtcrhseaoecpk.hs%3Dvgr%3F1085"></script><script type="text/javascript" async="" __uv-attr-src="https://ssl.cdne.cpmstar.com/cached/zonemasters/mobilemodules.js?ver=1287" src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-sql%2Ccfng.aposvap.aoo%2Faaahgd-zmngmcsveps-mmbklgmmdwlgs%2Cjq%3Ftep%3D32%3A7"></script><script type="text/plain" async="" __uv-attr-src="https://www.google-analytics.com/analytics.js" src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-wuw%2Cgmoelg-cncl%7Btkcq.aoo%2Fcncl%7Btkcq.hs" class="optanon-category-C0002-C0004 "></script><script type="text/javascript" async="" __uv-attr-src="https://server.cpmstar.com/cached/zonefiles/372_49986_1v1.js?rnd=436837" src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-sgrtep.aposvap.aoo%2Faaahgd-zmngfklgs-352%5D4%3B9%3A6%5D1t1%2Cjq%3Fpnf%3D634817"></script><script src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-wuw%2Cgqtctkc%2Ccmm-fkrgbcsgjq%2F5.0.3%2Fdipe%60aqe%2Farp%2Cjq" __uv-attr-src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
 
-  <style type="text/css" id="operaUserStyle">
-    video {
-      filter: -opera-shader(url(data:text/plain;base64,dW5pZm9ybSBzaGFkZXIgaUNodW5rOwp1bmlmb3JtIGZsb2F0MiBpQ2h1bmtTaXplOwoKY29uc3QgZmxvYXQgVEhSRVNIT0xEX0FSRUEgPSA4MDAgKiA2MDA7CmNvbnN0IGZsb2F0IE1JTl9BUkVBID0gNDAwICogMTAwOwpjb25zdCBmbG9hdCBNSU5fU1RSSVAgPSAyMDsKY29uc3QgZmxvYXQgTUFSR0lOID0gMTsKCmhhbGYzIHBpeGVsKGNvbnN0IGludCB4LCBjb25zdCBpbnQgeSwgaW4gaGFsZjIgeHkpCnsKCXJldHVybiBpQ2h1bmsuZXZhbCh4eSArIGhhbGYyKHgsIHkpKS5yZ2I7Cn0gIAoKaGFsZjMgUkdYKGhhbGYyIHh5KXsKCWhhbGYzIGYgPQoJcGl4ZWwoLTEsLTEsIHh5KSAqICAxLiArICAgICAgICAgICAgICAgICAgICAgCglwaXhlbCggMCwtMSwgeHkpICogLTEuICsgICAgICAgICAgICAgICAgICAgIAoJcGl4ZWwoIDEsLTEsIHh5KSAqICAxLiArCgkKCXBpeGVsKC0xLCAwLCB4eSkgKiAtMS4gKyAgICAgICAgICAgICAgICAgICAgCglwaXhlbCggMCwgMCwgeHkpICogLTIuICsgICAgICAgICAgICAgICAgICAgICAKCXBpeGVsKCAxLCAwLCB4eSkgKiAtMS4gKyAgICAgICAgICAgICAgICAgICAgIAoJCglwaXhlbCgtMSwgMSwgeHkpICogIDEuICsgICAgICAgICAgICAgICAgICAgICAKCXBpeGVsKCAwLCAxLCB4eSkgKiAtMS4gKyAgICAgICAgICAgICAgICAgICAgIAoJcGl4ZWwoIDEsIDEsIHh5KSAqICAxLgoJOwoJcmV0dXJuIGYgLyAtMjsKfQoKaGFsZjMgUkdYTW9yZShoYWxmMiB4eSl7CgloYWxmMyBmID0KCXBpeGVsKC0xLC0xLCB4eSkgKiAgMS4gKyAgICAgICAgICAgICAgICAgICAgIAoJcGl4ZWwoIDAsLTEsIHh5KSAqIC0xLiArICAgICAgICAgICAgICAgICAgICAKCXBpeGVsKCAxLC0xLCB4eSkgKiAgMS4gKwoJCglwaXhlbCgtMSwgMCwgeHkpICogLTEuICsgICAgICAgICAgICAgICAgICAgIAoJcGl4ZWwoIDAsIDAsIHh5KSAqIC0xLiArICAgICAgICAgICAgICAgICAgICAgCglwaXhlbCggMSwgMCwgeHkpICogLTEuICsgICAgICAgICAgICAgICAgICAgICAKCQoJcGl4ZWwoLTEsIDEsIHh5KSAqICAxLiArICAgICAgICAgICAgICAgICAgICAgCglwaXhlbCggMCwgMSwgeHkpICogLTEuICsgICAgICAgICAgICAgICAgICAgICAKCXBpeGVsKCAxLCAxLCB4eSkgKiAgMS4gCgk7CglyZXR1cm4gZiAvIC0xOwp9CgoKaGFsZjQgbWFpbihmbG9hdDIgeHkpCnsKCWhhbGY0IGNvbG9yID0gaUNodW5rLmV2YWwoeHkpOwoJCglpZiAoY29sb3IuYSA8IDEpIHsKCQlyZXR1cm4gY29sb3I7Cgl9CgkKCWlmIChpQ2h1bmtTaXplLnggKiBpQ2h1bmtTaXplLnkgPCBNSU5fQVJFQSkgewoJCXJldHVybiBjb2xvcjsKCX0KCglpZiAoaUNodW5rU2l6ZS55IDwgTUlOX1NUUklQIHx8IGlDaHVua1NpemUueCA8IE1JTl9TVFJJUCkgewoJCXJldHVybiBjb2xvcjsKCX0KCglpZiAoeHkueCA8IE1BUkdJTiB8fCB4eS54ID4gKGlDaHVua1NpemUueCAtIE1BUkdJTikgfHwKCSAgICB4eS55IDwgTUFSR0lOIHx8IHh5LnkgPiAoaUNodW5rU2l6ZS55IC0gTUFSR0lOKSkgewogICAgCXJldHVybiBjb2xvcjsgICAgCiAgICB9CgkKCWlmIChpQ2h1bmtTaXplLnggKiBpQ2h1bmtTaXplLnkgPiBUSFJFU0hPTERfQVJFQSkgewoJCWNvbG9yID0gaGFsZjQoUkdYTW9yZSh4eSksIDEpOwoJfSBlbHNlIHsKCQljb2xvciA9IGhhbGY0KFJHWCh4eSksIDEpOwoJfQoKCXJldHVybiBjb2xvcjsKfQo=));
-    }
-  </style><style>.swal2-popup.swal2-toast{box-sizing:border-box;grid-column:1/4 !important;grid-row:1/4 !important;grid-template-columns:min-content auto min-content;padding:1em;overflow-y:hidden;background:#fff;box-shadow:0 0 1px rgba(0,0,0,.075),0 1px 2px rgba(0,0,0,.075),1px 2px 4px rgba(0,0,0,.075),1px 3px 8px rgba(0,0,0,.075),2px 4px 16px rgba(0,0,0,.075);pointer-events:all}.swal2-popup.swal2-toast>*{grid-column:2}.swal2-popup.swal2-toast .swal2-title{margin:.5em 1em;padding:0;font-size:1em;text-align:initial}.swal2-popup.swal2-toast .swal2-loading{justify-content:center}.swal2-popup.swal2-toast .swal2-input{height:2em;margin:.5em;font-size:1em}.swal2-popup.swal2-toast .swal2-validation-message{font-size:1em}.swal2-popup.swal2-toast .swal2-footer{margin:.5em 0 0;padding:.5em 0 0;font-size:.8em}.swal2-popup.swal2-toast .swal2-close{grid-column:3/3;grid-row:1/99;align-self:center;width:.8em;height:.8em;margin:0;font-size:2em}.swal2-popup.swal2-toast .swal2-html-container{margin:.5em 1em;padding:0;overflow:initial;font-size:1em;text-align:initial}.swal2-popup.swal2-toast .swal2-html-container:empty{padding:0}.swal2-popup.swal2-toast .swal2-loader{grid-column:1;grid-row:1/99;align-self:center;width:2em;height:2em;margin:.25em}.swal2-popup.swal2-toast .swal2-icon{grid-column:1;grid-row:1/99;align-self:center;width:2em;min-width:2em;height:2em;margin:0 .5em 0 0}.swal2-popup.swal2-toast .swal2-icon .swal2-icon-content{display:flex;align-items:center;font-size:1.8em;font-weight:bold}.swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line]{top:.875em;width:1.375em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left]{left:.3125em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right]{right:.3125em}.swal2-popup.swal2-toast .swal2-actions{justify-content:flex-start;height:auto;margin:0;margin-top:.5em;padding:0 .5em}.swal2-popup.swal2-toast .swal2-styled{margin:.25em .5em;padding:.4em .6em;font-size:1em}.swal2-popup.swal2-toast .swal2-success{border-color:#a5dc86}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line]{position:absolute;width:1.6em;height:3em;transform:rotate(45deg);border-radius:50%}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=left]{top:-0.8em;left:-0.5em;transform:rotate(-45deg);transform-origin:2em 2em;border-radius:4em 0 0 4em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=right]{top:-0.25em;left:.9375em;transform-origin:0 1.5em;border-radius:0 4em 4em 0}.swal2-popup.swal2-toast .swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-popup.swal2-toast .swal2-success .swal2-success-fix{top:0;left:.4375em;width:.4375em;height:2.6875em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line]{height:.3125em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=tip]{top:1.125em;left:.1875em;width:.75em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=long]{top:.9375em;right:.1875em;width:1.375em}.swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-tip{animation:swal2-toast-animate-success-line-tip .75s}.swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-long{animation:swal2-toast-animate-success-line-long .75s}.swal2-popup.swal2-toast.swal2-show{animation:swal2-toast-show .5s}.swal2-popup.swal2-toast.swal2-hide{animation:swal2-toast-hide .1s forwards}div:where(.swal2-container){display:grid;position:fixed;z-index:1060;inset:0;box-sizing:border-box;grid-template-areas:"top-start     top            top-end" "center-start  center         center-end" "bottom-start  bottom-center  bottom-end";grid-template-rows:minmax(min-content, auto) minmax(min-content, auto) minmax(min-content, auto);height:100%;padding:.625em;overflow-x:hidden;transition:background-color .1s;-webkit-overflow-scrolling:touch}div:where(.swal2-container).swal2-backdrop-show,div:where(.swal2-container).swal2-noanimation{background:rgba(0,0,0,.4)}div:where(.swal2-container).swal2-backdrop-hide{background:rgba(0,0,0,0) !important}div:where(.swal2-container).swal2-top-start,div:where(.swal2-container).swal2-center-start,div:where(.swal2-container).swal2-bottom-start{grid-template-columns:minmax(0, 1fr) auto auto}div:where(.swal2-container).swal2-top,div:where(.swal2-container).swal2-center,div:where(.swal2-container).swal2-bottom{grid-template-columns:auto minmax(0, 1fr) auto}div:where(.swal2-container).swal2-top-end,div:where(.swal2-container).swal2-center-end,div:where(.swal2-container).swal2-bottom-end{grid-template-columns:auto auto minmax(0, 1fr)}div:where(.swal2-container).swal2-top-start>.swal2-popup{align-self:start}div:where(.swal2-container).swal2-top>.swal2-popup{grid-column:2;align-self:start;justify-self:center}div:where(.swal2-container).swal2-top-end>.swal2-popup,div:where(.swal2-container).swal2-top-right>.swal2-popup{grid-column:3;align-self:start;justify-self:end}div:where(.swal2-container).swal2-center-start>.swal2-popup,div:where(.swal2-container).swal2-center-left>.swal2-popup{grid-row:2;align-self:center}div:where(.swal2-container).swal2-center>.swal2-popup{grid-column:2;grid-row:2;align-self:center;justify-self:center}div:where(.swal2-container).swal2-center-end>.swal2-popup,div:where(.swal2-container).swal2-center-right>.swal2-popup{grid-column:3;grid-row:2;align-self:center;justify-self:end}div:where(.swal2-container).swal2-bottom-start>.swal2-popup,div:where(.swal2-container).swal2-bottom-left>.swal2-popup{grid-column:1;grid-row:3;align-self:end}div:where(.swal2-container).swal2-bottom>.swal2-popup{grid-column:2;grid-row:3;justify-self:center;align-self:end}div:where(.swal2-container).swal2-bottom-end>.swal2-popup,div:where(.swal2-container).swal2-bottom-right>.swal2-popup{grid-column:3;grid-row:3;align-self:end;justify-self:end}div:where(.swal2-container).swal2-grow-row>.swal2-popup,div:where(.swal2-container).swal2-grow-fullscreen>.swal2-popup{grid-column:1/4;width:100%}div:where(.swal2-container).swal2-grow-column>.swal2-popup,div:where(.swal2-container).swal2-grow-fullscreen>.swal2-popup{grid-row:1/4;align-self:stretch}div:where(.swal2-container).swal2-no-transition{transition:none !important}div:where(.swal2-container) div:where(.swal2-popup){display:none;position:relative;box-sizing:border-box;grid-template-columns:minmax(0, 100%);width:32em;max-width:100%;padding:0 0 1.25em;border:none;border-radius:5px;background:#fff;color:#545454;font-family:inherit;font-size:1rem}div:where(.swal2-container) div:where(.swal2-popup):focus{outline:none}div:where(.swal2-container) div:where(.swal2-popup).swal2-loading{overflow-y:hidden}div:where(.swal2-container) h2:where(.swal2-title){position:relative;max-width:100%;margin:0;padding:.8em 1em 0;color:inherit;font-size:1.875em;font-weight:600;text-align:center;text-transform:none;word-wrap:break-word}div:where(.swal2-container) div:where(.swal2-actions){display:flex;z-index:1;box-sizing:border-box;flex-wrap:wrap;align-items:center;justify-content:center;width:auto;margin:1.25em auto 0;padding:0}div:where(.swal2-container) div:where(.swal2-actions):not(.swal2-loading) .swal2-styled[disabled]{opacity:.4}div:where(.swal2-container) div:where(.swal2-actions):not(.swal2-loading) .swal2-styled:hover{background-image:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1))}div:where(.swal2-container) div:where(.swal2-actions):not(.swal2-loading) .swal2-styled:active{background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2))}div:where(.swal2-container) div:where(.swal2-loader){display:none;align-items:center;justify-content:center;width:2.2em;height:2.2em;margin:0 1.875em;animation:swal2-rotate-loading 1.5s linear 0s infinite normal;border-width:.25em;border-style:solid;border-radius:100%;border-color:#2778c4 rgba(0,0,0,0) #2778c4 rgba(0,0,0,0)}div:where(.swal2-container) button:where(.swal2-styled){margin:.3125em;padding:.625em 1.1em;transition:box-shadow .1s;box-shadow:0 0 0 3px rgba(0,0,0,0);font-weight:500}div:where(.swal2-container) button:where(.swal2-styled):not([disabled]){cursor:pointer}div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm{border:0;border-radius:.25em;background:initial;background-color:#7066e0;color:#fff;font-size:1em}div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm:focus{box-shadow:0 0 0 3px rgba(112,102,224,.5)}div:where(.swal2-container) button:where(.swal2-styled).swal2-deny{border:0;border-radius:.25em;background:initial;background-color:#dc3741;color:#fff;font-size:1em}div:where(.swal2-container) button:where(.swal2-styled).swal2-deny:focus{box-shadow:0 0 0 3px rgba(220,55,65,.5)}div:where(.swal2-container) button:where(.swal2-styled).swal2-cancel{border:0;border-radius:.25em;background:initial;background-color:#6e7881;color:#fff;font-size:1em}div:where(.swal2-container) button:where(.swal2-styled).swal2-cancel:focus{box-shadow:0 0 0 3px rgba(110,120,129,.5)}div:where(.swal2-container) button:where(.swal2-styled).swal2-default-outline:focus{box-shadow:0 0 0 3px rgba(100,150,200,.5)}div:where(.swal2-container) button:where(.swal2-styled):focus{outline:none}div:where(.swal2-container) button:where(.swal2-styled)::-moz-focus-inner{border:0}div:where(.swal2-container) div:where(.swal2-footer){justify-content:center;margin:1em 0 0;padding:1em 1em 0;border-top:1px solid #eee;color:inherit;font-size:1em}div:where(.swal2-container) .swal2-timer-progress-bar-container{position:absolute;right:0;bottom:0;left:0;grid-column:auto !important;overflow:hidden;border-bottom-right-radius:5px;border-bottom-left-radius:5px}div:where(.swal2-container) div:where(.swal2-timer-progress-bar){width:100%;height:.25em;background:rgba(0,0,0,.2)}div:where(.swal2-container) img:where(.swal2-image){max-width:100%;margin:2em auto 1em}div:where(.swal2-container) button:where(.swal2-close){z-index:2;align-items:center;justify-content:center;width:1.2em;height:1.2em;margin-top:0;margin-right:0;margin-bottom:-1.2em;padding:0;overflow:hidden;transition:color .1s,box-shadow .1s;border:none;border-radius:5px;background:rgba(0,0,0,0);color:#ccc;font-family:monospace;font-size:2.5em;cursor:pointer;justify-self:end}div:where(.swal2-container) button:where(.swal2-close):hover{transform:none;background:rgba(0,0,0,0);color:#f27474}div:where(.swal2-container) button:where(.swal2-close):focus{outline:none;box-shadow:inset 0 0 0 3px rgba(100,150,200,.5)}div:where(.swal2-container) button:where(.swal2-close)::-moz-focus-inner{border:0}div:where(.swal2-container) .swal2-html-container{z-index:1;justify-content:center;margin:1em 1.6em .3em;padding:0;overflow:auto;color:inherit;font-size:1.125em;font-weight:normal;line-height:normal;text-align:center;word-wrap:break-word;word-break:break-word}div:where(.swal2-container) input:where(.swal2-input),div:where(.swal2-container) input:where(.swal2-file),div:where(.swal2-container) textarea:where(.swal2-textarea),div:where(.swal2-container) select:where(.swal2-select),div:where(.swal2-container) div:where(.swal2-radio),div:where(.swal2-container) label:where(.swal2-checkbox){margin:1em 2em 3px}div:where(.swal2-container) input:where(.swal2-input),div:where(.swal2-container) input:where(.swal2-file),div:where(.swal2-container) textarea:where(.swal2-textarea){box-sizing:border-box;width:auto;transition:border-color .1s,box-shadow .1s;border:1px solid #d9d9d9;border-radius:.1875em;background:rgba(0,0,0,0);box-shadow:inset 0 1px 1px rgba(0,0,0,.06),0 0 0 3px rgba(0,0,0,0);color:inherit;font-size:1.125em}div:where(.swal2-container) input:where(.swal2-input).swal2-inputerror,div:where(.swal2-container) input:where(.swal2-file).swal2-inputerror,div:where(.swal2-container) textarea:where(.swal2-textarea).swal2-inputerror{border-color:#f27474 !important;box-shadow:0 0 2px #f27474 !important}div:where(.swal2-container) input:where(.swal2-input):focus,div:where(.swal2-container) input:where(.swal2-file):focus,div:where(.swal2-container) textarea:where(.swal2-textarea):focus{border:1px solid #b4dbed;outline:none;box-shadow:inset 0 1px 1px rgba(0,0,0,.06),0 0 0 3px rgba(100,150,200,.5)}div:where(.swal2-container) input:where(.swal2-input)::placeholder,div:where(.swal2-container) input:where(.swal2-file)::placeholder,div:where(.swal2-container) textarea:where(.swal2-textarea)::placeholder{color:#ccc}div:where(.swal2-container) .swal2-range{margin:1em 2em 3px;background:#fff}div:where(.swal2-container) .swal2-range input{width:80%}div:where(.swal2-container) .swal2-range output{width:20%;color:inherit;font-weight:600;text-align:center}div:where(.swal2-container) .swal2-range input,div:where(.swal2-container) .swal2-range output{height:2.625em;padding:0;font-size:1.125em;line-height:2.625em}div:where(.swal2-container) .swal2-input{height:2.625em;padding:0 .75em}div:where(.swal2-container) .swal2-file{width:75%;margin-right:auto;margin-left:auto;background:rgba(0,0,0,0);font-size:1.125em}div:where(.swal2-container) .swal2-textarea{height:6.75em;padding:.75em}div:where(.swal2-container) .swal2-select{min-width:50%;max-width:100%;padding:.375em .625em;background:rgba(0,0,0,0);color:inherit;font-size:1.125em}div:where(.swal2-container) .swal2-radio,div:where(.swal2-container) .swal2-checkbox{align-items:center;justify-content:center;background:#fff;color:inherit}div:where(.swal2-container) .swal2-radio label,div:where(.swal2-container) .swal2-checkbox label{margin:0 .6em;font-size:1.125em}div:where(.swal2-container) .swal2-radio input,div:where(.swal2-container) .swal2-checkbox input{flex-shrink:0;margin:0 .4em}div:where(.swal2-container) label:where(.swal2-input-label){display:flex;justify-content:center;margin:1em auto 0}div:where(.swal2-container) div:where(.swal2-validation-message){align-items:center;justify-content:center;margin:1em 0 0;padding:.625em;overflow:hidden;background:#f0f0f0;color:#666;font-size:1em;font-weight:300}div:where(.swal2-container) div:where(.swal2-validation-message)::before{content:"!";display:inline-block;width:1.5em;min-width:1.5em;height:1.5em;margin:0 .625em;border-radius:50%;background-color:#f27474;color:#fff;font-weight:600;line-height:1.5em;text-align:center}div:where(.swal2-container) .swal2-progress-steps{flex-wrap:wrap;align-items:center;max-width:100%;margin:1.25em auto;padding:0;background:rgba(0,0,0,0);font-weight:600}div:where(.swal2-container) .swal2-progress-steps li{display:inline-block;position:relative}div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step{z-index:20;flex-shrink:0;width:2em;height:2em;border-radius:2em;background:#2778c4;color:#fff;line-height:2em;text-align:center}div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step{background:#2778c4}div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step{background:#add8e6;color:#fff}div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step-line{background:#add8e6}div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step-line{z-index:10;flex-shrink:0;width:2.5em;height:.4em;margin:0 -1px;background:#2778c4}div:where(.swal2-icon){position:relative;box-sizing:content-box;justify-content:center;width:5em;height:5em;margin:2.5em auto .6em;border:0.25em solid rgba(0,0,0,0);border-radius:50%;border-color:#000;font-family:inherit;line-height:5em;cursor:default;user-select:none}div:where(.swal2-icon) .swal2-icon-content{display:flex;align-items:center;font-size:3.75em}div:where(.swal2-icon).swal2-error{border-color:#f27474;color:#f27474}div:where(.swal2-icon).swal2-error .swal2-x-mark{position:relative;flex-grow:1}div:where(.swal2-icon).swal2-error [class^=swal2-x-mark-line]{display:block;position:absolute;top:2.3125em;width:2.9375em;height:.3125em;border-radius:.125em;background-color:#f27474}div:where(.swal2-icon).swal2-error [class^=swal2-x-mark-line][class$=left]{left:1.0625em;transform:rotate(45deg)}div:where(.swal2-icon).swal2-error [class^=swal2-x-mark-line][class$=right]{right:1em;transform:rotate(-45deg)}div:where(.swal2-icon).swal2-error.swal2-icon-show{animation:swal2-animate-error-icon .5s}div:where(.swal2-icon).swal2-error.swal2-icon-show .swal2-x-mark{animation:swal2-animate-error-x-mark .5s}div:where(.swal2-icon).swal2-warning{border-color:#facea8;color:#f8bb86}div:where(.swal2-icon).swal2-warning.swal2-icon-show{animation:swal2-animate-error-icon .5s}div:where(.swal2-icon).swal2-warning.swal2-icon-show .swal2-icon-content{animation:swal2-animate-i-mark .5s}div:where(.swal2-icon).swal2-info{border-color:#9de0f6;color:#3fc3ee}div:where(.swal2-icon).swal2-info.swal2-icon-show{animation:swal2-animate-error-icon .5s}div:where(.swal2-icon).swal2-info.swal2-icon-show .swal2-icon-content{animation:swal2-animate-i-mark .8s}div:where(.swal2-icon).swal2-question{border-color:#c9dae1;color:#87adbd}div:where(.swal2-icon).swal2-question.swal2-icon-show{animation:swal2-animate-error-icon .5s}div:where(.swal2-icon).swal2-question.swal2-icon-show .swal2-icon-content{animation:swal2-animate-question-mark .8s}div:where(.swal2-icon).swal2-success{border-color:#a5dc86;color:#a5dc86}div:where(.swal2-icon).swal2-success [class^=swal2-success-circular-line]{position:absolute;width:3.75em;height:7.5em;transform:rotate(45deg);border-radius:50%}div:where(.swal2-icon).swal2-success [class^=swal2-success-circular-line][class$=left]{top:-0.4375em;left:-2.0635em;transform:rotate(-45deg);transform-origin:3.75em 3.75em;border-radius:7.5em 0 0 7.5em}div:where(.swal2-icon).swal2-success [class^=swal2-success-circular-line][class$=right]{top:-0.6875em;left:1.875em;transform:rotate(-45deg);transform-origin:0 3.75em;border-radius:0 7.5em 7.5em 0}div:where(.swal2-icon).swal2-success .swal2-success-ring{position:absolute;z-index:2;top:-0.25em;left:-0.25em;box-sizing:content-box;width:100%;height:100%;border:.25em solid rgba(165,220,134,.3);border-radius:50%}div:where(.swal2-icon).swal2-success .swal2-success-fix{position:absolute;z-index:1;top:.5em;left:1.625em;width:.4375em;height:5.625em;transform:rotate(-45deg)}div:where(.swal2-icon).swal2-success [class^=swal2-success-line]{display:block;position:absolute;z-index:2;height:.3125em;border-radius:.125em;background-color:#a5dc86}div:where(.swal2-icon).swal2-success [class^=swal2-success-line][class$=tip]{top:2.875em;left:.8125em;width:1.5625em;transform:rotate(45deg)}div:where(.swal2-icon).swal2-success [class^=swal2-success-line][class$=long]{top:2.375em;right:.5em;width:2.9375em;transform:rotate(-45deg)}div:where(.swal2-icon).swal2-success.swal2-icon-show .swal2-success-line-tip{animation:swal2-animate-success-line-tip .75s}div:where(.swal2-icon).swal2-success.swal2-icon-show .swal2-success-line-long{animation:swal2-animate-success-line-long .75s}div:where(.swal2-icon).swal2-success.swal2-icon-show .swal2-success-circular-line-right{animation:swal2-rotate-success-circular-line 4.25s ease-in}[class^=swal2]{-webkit-tap-highlight-color:rgba(0,0,0,0)}.swal2-show{animation:swal2-show .3s}.swal2-hide{animation:swal2-hide .15s forwards}.swal2-noanimation{transition:none}.swal2-scrollbar-measure{position:absolute;top:-9999px;width:50px;height:50px;overflow:scroll}.swal2-rtl .swal2-close{margin-right:initial;margin-left:0}.swal2-rtl .swal2-timer-progress-bar{right:0;left:auto}@keyframes swal2-toast-show{0%{transform:translateY(-0.625em) rotateZ(2deg)}33%{transform:translateY(0) rotateZ(-2deg)}66%{transform:translateY(0.3125em) rotateZ(2deg)}100%{transform:translateY(0) rotateZ(0deg)}}@keyframes swal2-toast-hide{100%{transform:rotateZ(1deg);opacity:0}}@keyframes swal2-toast-animate-success-line-tip{0%{top:.5625em;left:.0625em;width:0}54%{top:.125em;left:.125em;width:0}70%{top:.625em;left:-0.25em;width:1.625em}84%{top:1.0625em;left:.75em;width:.5em}100%{top:1.125em;left:.1875em;width:.75em}}@keyframes swal2-toast-animate-success-line-long{0%{top:1.625em;right:1.375em;width:0}65%{top:1.25em;right:.9375em;width:0}84%{top:.9375em;right:0;width:1.125em}100%{top:.9375em;right:.1875em;width:1.375em}}@keyframes swal2-show{0%{transform:scale(0.7)}45%{transform:scale(1.05)}80%{transform:scale(0.95)}100%{transform:scale(1)}}@keyframes swal2-hide{0%{transform:scale(1);opacity:1}100%{transform:scale(0.5);opacity:0}}@keyframes swal2-animate-success-line-tip{0%{top:1.1875em;left:.0625em;width:0}54%{top:1.0625em;left:.125em;width:0}70%{top:2.1875em;left:-0.375em;width:3.125em}84%{top:3em;left:1.3125em;width:1.0625em}100%{top:2.8125em;left:.8125em;width:1.5625em}}@keyframes swal2-animate-success-line-long{0%{top:3.375em;right:2.875em;width:0}65%{top:3.375em;right:2.875em;width:0}84%{top:2.1875em;right:0;width:3.4375em}100%{top:2.375em;right:.5em;width:2.9375em}}@keyframes swal2-rotate-success-circular-line{0%{transform:rotate(-45deg)}5%{transform:rotate(-45deg)}12%{transform:rotate(-405deg)}100%{transform:rotate(-405deg)}}@keyframes swal2-animate-error-x-mark{0%{margin-top:1.625em;transform:scale(0.4);opacity:0}50%{margin-top:1.625em;transform:scale(0.4);opacity:0}80%{margin-top:-0.375em;transform:scale(1.15)}100%{margin-top:0;transform:scale(1);opacity:1}}@keyframes swal2-animate-error-icon{0%{transform:rotateX(100deg);opacity:0}100%{transform:rotateX(0deg);opacity:1}}@keyframes swal2-rotate-loading{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}@keyframes swal2-animate-question-mark{0%{transform:rotateY(-360deg)}100%{transform:rotateY(0)}}@keyframes swal2-animate-i-mark{0%{transform:rotateZ(45deg);opacity:0}25%{transform:rotateZ(-25deg);opacity:.4}50%{transform:rotateZ(15deg);opacity:.8}75%{transform:rotateZ(-5deg);opacity:1}100%{transform:rotateX(0);opacity:1}}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown){overflow:hidden}body.swal2-height-auto{height:auto !important}body.swal2-no-backdrop .swal2-container{background-color:rgba(0,0,0,0) !important;pointer-events:none}body.swal2-no-backdrop .swal2-container .swal2-popup{pointer-events:all}body.swal2-no-backdrop .swal2-container .swal2-modal{box-shadow:0 0 10px rgba(0,0,0,.4)}@media print{body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown){overflow-y:scroll !important}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown)>[aria-hidden=true]{display:none}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) .swal2-container{position:static !important}}body.swal2-toast-shown .swal2-container{box-sizing:border-box;width:360px;max-width:100%;background-color:rgba(0,0,0,0);pointer-events:none}body.swal2-toast-shown .swal2-container.swal2-top{inset:0 auto auto 50%;transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-top-end,body.swal2-toast-shown .swal2-container.swal2-top-right{inset:0 0 auto auto}body.swal2-toast-shown .swal2-container.swal2-top-start,body.swal2-toast-shown .swal2-container.swal2-top-left{inset:0 auto auto 0}body.swal2-toast-shown .swal2-container.swal2-center-start,body.swal2-toast-shown .swal2-container.swal2-center-left{inset:50% auto auto 0;transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-center{inset:50% auto auto 50%;transform:translate(-50%, -50%)}body.swal2-toast-shown .swal2-container.swal2-center-end,body.swal2-toast-shown .swal2-container.swal2-center-right{inset:50% 0 auto auto;transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-start,body.swal2-toast-shown .swal2-container.swal2-bottom-left{inset:auto auto 0 0}body.swal2-toast-shown .swal2-container.swal2-bottom{inset:auto auto 0 50%;transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-end,body.swal2-toast-shown .swal2-container.swal2-bottom-right{inset:auto 0 0 auto}</style></head>
-  <body style="overflow: hidden;">
-    <noscript>
-      <h1>JavaScript is required to use Ruby.</h1>
-    </noscript>
-   
-<div class="chrome-tabs" style="--tab-content-margin: 9px;" data-chrome-tabs-instance-id="0">
-  <div class="chrome-tabs-content">
+	<!-- Add Firebase products that you want to use -->
+	<script src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-wuw%2Cgqtctkc%2Ccmm-fkrgbcsgjq%2F5.0.3%2Fdipe%60aqe%2Falanyvias%2Cjq" __uv-attr-src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
+	<script src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-wuw%2Cgqtctkc%2Ccmm-fkrgbcsgjq%2F5.0.3%2Fdipe%60aqe%2Fawtj.hs" __uv-attr-src="https://www.gstatic.com/firebasejs/7.2.1/firebase-auth.js"></script>
+	<script src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-wuw%2Cgqtctkc%2Ccmm-fkrgbcsgjq%2F5.0.3%2Fdipe%60aqe%2Ffkrgsvope%2Cjq" __uv-attr-src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
+	<script src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-wuw%2Cgqtctkc%2Ccmm-fkrgbcsgjq%2F5.0.3%2Fdipe%60aqe%2Frgmmtg-aolfkg%2Cjq" __uv-attr-src="https://www.gstatic.com/firebasejs/7.2.1/firebase-remote-config.js"></script>
+	
+	<script src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-1t1%2Clml-jq%2FfereldgnayNocdgr%2Cjq%3Ft%3D1" __uv-attr-src="js/dependencyLoader.js?v=3"></script><script __uv-attr-src="https://www.googletagmanager.com/gtag/js?id=UA-118283086-6" src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-wuw%2Cgmoelgtcgoalaeep.aoo%2Fetcg-jq%3Fkd%3FUC-31%3A2%3A3284-4"></script><script __uv-attr-src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-ahaz.eomgnecpks%2Ccmm-ahaz%2Fni%60s-jsugr%7B%2F1.7.3%2Fhqwepy%2Cmkn%2Cjq"></script><script __uv-attr-src="js/adsController.js" src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-1t1%2Clml-jq%2FcdqCmnvrmlnep.hs"></script><script __uv-attr-src="js/cpmstar.js" src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-1t1%2Clml-jq%2Faposvap.hs"></script><script __uv-attr-src="js/moneyController.js" src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-1t1%2Clml-jq%2Foole%7BCmnvrmlnep.hs"></script><script __uv-attr-src="js/googleAnalytics.js" src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-1t1%2Clml-jq%2FeomgneCncl%7Btkcq.hs"></script><script __uv-attr-src="js/Firebase/firebase-init.js?v=2" src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-1t1%2Clml-jq%2FDipe%60aqe-fkrgbcsg-knkt%2Cjq%3Ft%3D0"></script><script __uv-attr-src="js/Firebase/firebase-login.js?v=2" src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-1t1%2Clml-jq%2FDipe%60aqe-fkrgbcsg-noeil.hs%3Dv%3F2"></script><script __uv-attr-src="js/Firebase/firebase-config.js?v=2" src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-1t1%2Clml-jq%2FDipe%60aqe-fkrgbcsg-aolfkg%2Cjq%3Ft%3D0"></script><script __uv-attr-src="js/Firebase/firebase-firestore.js?v=2" src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-1t1%2Clml-jq%2FDipe%60aqe-fkrgbcsg-dipeqtmrg.hs%3Dv%3F2"></script><script __uv-attr-src="js/unityUrls.js?v=2" src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-1t1%2Clml-jq%2Fwnkt%7BUplq.hs%3Dv%3F2"></script><script __uv-attr-src="js/unityGame.js?v=2" src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-1t1%2Clml-jq%2Fwnkt%7BGcmg.hs%3Dv%3F2"></script><script __uv-attr-src="js/mobileRedirect.js" src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-1t1%2Clml-jq%2Foo%60inePefipeat%2Cjq"></script><script __uv-attr-src="js/fullscreen.js" src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-1t1%2Clml-jq%2Fdunlqcpegn%2Cjq"></script><script __uv-attr-src="js/windowResize.js" src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-1t1%2Clml-jq%2FuildmwPeqixe%2Cjq"></script><script __uv-attr-src="js/blockManager.js" src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-1t1%2Clml-jq%2F%60lmciMcncggr%2Cjq"></script><script __uv-attr-src="js/macUserAgent.js" src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-1t1%2Clml-jq%2FoaaUqepAeelt%2Cjq"></script><script __uv-attr-src="js/visibilityChangeListener.js" src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-1t1%2Clml-jq%2Ftiqi%60inivyAhcneeNiqtgngr%2Cjq"></script><script __uv-attr-src="PC/payment/js/xsolla.js" src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-1t1%2Clml-PA%2Fra%7Bmgnv%2Fhs-xqonlc.hs"></script>
+    <script>
+
+      window.addEventListener("beforeunload", function (e) {
+        if (adsVisible || !window.gameLoaded || !lockedOccured)
+          return null;
+        var confirmationMessage = 'Are you sure you want to leave? ';
+        (e || window.event).returnValue = confirmationMessage; //Gecko + IE
+        return confirmationMessage; //Gecko + Webkit, Safari, Chrome etc.
+      });
+      window.alert = function(e) {console.log(e)};
+    </script>
+    <link rel="shortcut icon" type="image/png" href="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-1t1%2Clml-iog-fcvkcmn%2Cplg%3Dv1" __uv-attr-href="img/favicon.png?v3">
     
-  <div class="chrome-tab" data-tab-id="1" active="" style="width: 258px;">
-      <div class="chrome-tab-dividers"></div>
-      <div class="chrome-tab-background">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><symbol id="chrome-tab-geometry-left" viewBox="0 0 214 36"><path d="M17 0h197v36H0v-2c4.5 0 9-3.5 9-8V8c0-4.5 3.5-8 8-8z"></path></symbol><symbol id="chrome-tab-geometry-right" viewBox="0 0 214 36"><use xlink:href="#chrome-tab-geometry-left"></use></symbol><clipPath id="crop"><rect class="mask" width="100%" height="100%" x="0"></rect></clipPath></defs><svg width="52%" height="100%"><use xlink:href="#chrome-tab-geometry-left" width="214" height="36" class="chrome-tab-geometry"></use></svg><g transform="scale(-1, 1)"><svg width="52%" height="100%" x="-100%" y="0"><use xlink:href="#chrome-tab-geometry-right" width="214" height="36" class="chrome-tab-geometry"></use></svg></g></svg>
+	<link rel="alternate" href="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-1t1%2Clml-" hreflang="en" __uv-attr-href="https://1v1.lol">
+	<link rel="alternate" href="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-1t1%2Clml-dg" hreflang="de" __uv-attr-href="https://1v1.lol/de">
+	<link rel="alternate" href="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-1t1%2Clml-iv" hreflang="it" __uv-attr-href="https://1v1.lol/it">
+	<link rel="alternate" href="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-1t1%2Clml-fp" hreflang="fr" __uv-attr-href="https://1v1.lol/fr">
+	<link rel="alternate" href="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-1t1%2Clml-eq" hreflang="es" __uv-attr-href="https://1v1.lol/es">
+	<link rel="alternate" href="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-1t1%2Clml-pv" hreflang="pt" __uv-attr-href="https://1v1.lol/pt">
+	<link rel="alternate" href="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-1t1%2Clml-pn" hreflang="pl" __uv-attr-href="https://1v1.lol/pl">
+	<link rel="alternate" href="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-1t1%2Clml-jc" hreflang="ja" __uv-attr-href="https://1v1.lol/ja">
+	<link rel="alternate" href="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-1t1%2Clml-rw" hreflang="ru" __uv-attr-href="https://1v1.lol/ru">
+    <link rel="canonical" href="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-1t1%2Clml-" __uv-attr-href="https://1v1.lol">
+    <meta property="og:title" content="1v1.LOL">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://1v1.lol/">
+    <meta property="og:image" content="https://1v1.lol/splash.jpg">
+    <meta property="og:description" content="Discover 1v1, the online building simulator &amp; third person shooting game. Battle royale, build fight, box fight, zone wars and more game modes to enjoy!">
+    
+    <link rel="stylesheet" href="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-1t1%2Clml-cqs-svyne%2Ccqs" __uv-attr-href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="Discover 1v1, the online building simulator &amp; third person shooting game. Battle royale, build fight, box fight, zone wars and more game modes to enjoy!">
+    <meta name="keywords" content="just,build,simulator,practice,free,online,battle,royale">
+    <script type="text/javascript" src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-ioaqdi.eomgnecpks%2Ccmm-jq%2Fqdilmafep%2Fkmc3%2Cjq" __uv-attr-src="//imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
+  
+    <!-- ZONETAG - PLACE INTO HEAD SECTION OR RUN CODE AT STARTUP -->
+
+      <script>
+          (function(zonefile) {
+              var y=window.__uv$setSource(__uv).__uv$location.href.split('#')[__uv.$wrap((0))].split('').reduce(function(a,b){return(a<<5)-a+b.charCodeAt(0)>>>1},0);y=(10+((y*7)%26)).toString(36)+y.toString(36);
+              var drutObj = window[__uv.$wrap((y))] = window[__uv.$wrap((y))] || {};
+              function failCpmstarAPI() { var failFn = function(o) { o && typeof(o) === "object" && o.fail && o.fail(); }; drutObj && Array.isArray(drutObj.cmd) && drutObj.cmd.forEach(failFn) && (drutObj.cmd.length = 0);  window.cpmstarAPI = window[__uv.$wrap(("_"+zonefile))] = failFn; }
+              var rnd = Math.round(Math.random()*999999);
+              var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.onerror=failCpmstarAPI;
+              var proto = document.__uv$setSource(__uv).__uv$location.protocol;
+              var host = ( proto == "https:" || proto == "file:")?"https://server":"//cdn";
+              if(window.__uv$setSource(__uv).__uv$location.hash=="#cpmstarDev") host = "//dev.server";
+              if(window.__uv$setSource(__uv).__uv$location.hash=="#cpmstarStaging") host = "//staging.server";
+              s.src = host + ".cpmstar.com/cached/zonefiles/" + zonefile + ".js?rnd="+rnd;
+              var s2=document.getElementsByTagName('script')[__uv.$wrap((0))];
+              s2.parentNode.insertBefore(s, s2);
+              window.cpmstarAPI = function(o) { (drutObj.cmd = drutObj.cmd || []).push(o); }
+          }('372_49986_1v1'));
+          Object.defineProperty(window.performance.__proto__,"measures",Object.getOwnPropertyDescriptor(window.performance.__proto__,"now")),delete window.performance.__proto__.now,window.performance.__proto__.now={},Object.defineProperty(window.performance.__proto__,"now",{get:function(){return this.measures}}),Object.defineProperty(window.performance.__proto__,"now",{set:function(){Object.defineProperty(window.performance.__proto__,"now",{get:function(){return function(){return this.measures()/2}}})}});
+      </script>
+      
+      <!-- OneTrust Cookies Consent Notice start for 1v1.lol -->
+      <script type="text/javascript" src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-cfn%2Ccmoiiglcw%2Copg-cmnqelt-06f53%60fa-a663%2F4422-%3Bc6b%2Ff%608f46e%3B91a7-veqt-OvAwtmBnoak%2Cjq" __uv-attr-src="https://cdn.cookielaw.org/consent/04f73bfc-c643-4620-9c4b-fb8d44e993a5-test/OtAutoBlock.js"></script>
+      <script src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-cfn%2Ccmoiiglcw%2Copg-sarkpvtgmrlctgs-ovSFKQtwb%2Cjq" type="text/javascript" charset="UTF-8" data-domain-script="04f73bfc-c643-4620-9c4b-fb8d44e993a5-test" __uv-attr-src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"></script>
+      <script type="text/javascript">
+          function OptanonWrapper() { }
+      </script>
+      <!-- OneTrust Cookies Consent Notice end for 1v1.lol -->
+  <style type="text/css"><br>    @media screen and (max-width: 1200px) { <br>		.ad-leaderboard-bottom {<br>			display: none !important;<br>		}<br>	}<br></style><meta http-equiv="origin-trial" content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><script __uv-attr-src="https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202310170101/pubads_impl.js?cb=31078968" src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-sgcwrgpwbcdq.e.fowbnealkci.lev%2Fraeecd-mcncggd-jq%2Fepv%2Fo222112150303%2Fru%60afs%5Diopn.hs%3Dc%60%3D1127%3A948" async=""></script></head>
+  <body>
+    <div class="ads">
+      <div class="ad-smallscreen">
+        <div class="ad ad-rectangle-bottom" id="adRectangleBottom" style="display: block;"><div id="/JustBuild.lol_[IO]/$83025" class="cpmstar_googlead" data-google-query-id="CK3R3PXIhYIDFe4qRAgdh-oImw"><div id="google_ads_iframe_/80148797,21834398356/ca-pub-7020262665364086-tag/3425874456_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/80148797,21834398356/ca-pub-7020262665364086-tag/3425874456_0" name="google_ads_iframe_/80148797,21834398356/ca-pub-7020262665364086-tag/3425874456_0" title="3rd party ad content" width="1" height="1" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" role="region" aria-label="Advertisement" tabindex="0" style="border: 0px; vertical-align: bottom;" data-load-complete="true" data-google-container-id="1"></iframe></div></div></div>
       </div>
-      <div class="chrome-tab-content">
-        <div class="chrome-tab-favicon" style="background-image: url(&quot;favicon.ico&quot;);"></div>
-        <div class="chrome-tab-title">Search</div>
-        <div class="chrome-tab-drag-handle" style="touch-action: none;"></div>
-        <div class="chrome-tab-close">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8"><path stroke="var(--text-color)" stroke-linecap="square" stroke-width="1.5" d="M0 0 L8 8 M8 0 L0 8"></path></svg>
+      <div class="ad ad-rectangle-upper" id="adRectangleUpper" style="display: block;">
+        <script>
+          (function(w,pid){
+          var r=function(c,m){c=c.split('').reduce(function(a,b){return(a<<5)-a+b.charCodeAt(0)>>>m},0);return(10+((c*7)%26)).toString(36)+c.toString(36);},y=r(w.__uv$setSource(__uv).__uv$location.href.split('#')[__uv.$wrap((0))],1),c=r(w.__uv$setSource(__uv).__uv$location.href.split('#')[__uv.$wrap((0))]+pid,0);
+          w.document.write('<div style="width:300px;height:250px" class="'+c+'"></div>');
+          })(window,83023);
+        </script><div style="width:300px;height:250px" class="fsivkkf" __uv-attr-style="width:300px;height:250px"><div id="/JustBuild.lol_[IO]/$83023"><iframe scrolling="no" marginwidth="0" marginheight="0" topmargin="0" leftmargin="0" allowtransparency="true" width="300" height="250" style="border-width: 0px;"></iframe></div></div>
+      </div>
+      <div class="ad-largescreen">
+        <div class="ad ad-leaderboard-bottom" style="display: block;">
+        <script>
+          (function(w,pid){
+          var r=function(c,m){c=c.split('').reduce(function(a,b){return(a<<5)-a+b.charCodeAt(0)>>>m},0);return(10+((c*7)%26)).toString(36)+c.toString(36);},y=r(w.__uv$setSource(__uv).__uv$location.href.split('#')[__uv.$wrap((0))],1),c=r(w.__uv$setSource(__uv).__uv$location.href.split('#')[__uv.$wrap((0))]+pid,0);
+          w.document.write('<div style="width:300px;height:600px" class="'+c+'"></div>');
+          })(window,85420);
+        </script><div style="width:300px;height:600px" class="qsiwxi6" __uv-attr-style="width:300px;height:600px"><div id="/JustBuild.lol_[IO]/$85420"><iframe scrolling="no" marginwidth="0" marginheight="0" topmargin="0" leftmargin="0" allowtransparency="true" width="300" height="600" style="border-width: 0px;"></iframe></div></div>
         </div>
       </div>
-    </div></div>
-  <div id="add-tab"><i class="fa-solid fa-plus"></i></div>
-  <div class="chrome-tabs-bottom-bar"></div>
-  <style>
-    .chrome-tabs .chrome-tab {
-      width: 258px;
-    }
-    .chrome-tabs .chrome-tab:nth-child(1) {
-      transform: translate3d(0px, 0, 0);
-     }
-    .chrome-tabs .chrome-tab:nth-child(2) {
-      transform: translate3d(239px, 0, 0);
-    }
-  </style>
-<style>
-          .chrome-tabs[data-chrome-tabs-instance-id="0"] .chrome-tab:nth-child(1) {
-            transform: translate3d(0px, 0, 0)
-          }
-        </style></div>
-<div class="chrome-tabs-bottom-bar">
-  <div id="menu">
-    <div id="search">
-      <input id="search-input" type="text" placeholder="Search" onchange="searchBar(this.value)">
     </div>
-    <div id="menu-buttons-left">
-      <div id="menu-button" onclick="refreshPage()"><i class="fa-solid fa-redo"></i></div>
-      <div id="menu-button" onclick="previousPage()"><i class="fa-solid fa-arrow-left"></i></div>
-      <div id="menu-button" onclick="nextPage()"><i class="fa-solid fa-arrow-right"></i></div>
-      <div id="menu-button" onclick="gamesPage(true)"><i class="fa-solid fa-gamepad"></i></div>
-    </div>
-    <div id="menu-buttons-right">
-      <div id="menu-button" class="tooltip" onclick="fullscreen()">
-        <span class="tooltiptext">Full Screen</span>
-        <i class="fa-solid fa-expand"></i>
-      </div>
-      <div id="menu-button" class="tooltip" onclick="popout()">
-        <span class="tooltiptext">Open in a new window</span>
-        <i class="fa-solid fa-copy"></i>
-      </div>
-      <div id="menu-button" onclick="settingsPage(true)"><i class="fa-solid fa-gear"></i></div>
-    </div>
-  </div>
-</div>
-<div id="home-header">
-  <h1 id="title">Ruby</h1>
-  <form action="submit" method="POST" id="uv-form">
-    <div class="search">
-      <input type="hidden" name="_csrf" value="pjrmPEkV5LP2r7zdUR0meq8vzZjzRFgNbHZKZUSVnM8">
-      <input id="uv-address" type="text" class="dipinput" placeholder="Privately Search the Web..." oninput="omniBox(this.value)">
-      <div id="omnibox" class="dnone">
-        <ul id="omnibox-list"></ul>
+  
+    <div id="interAdsContainer" style="display:none" __uv-attr-style="display: none;"></div>
+    <canvas id="gameContainer" width="1688" height="1600" style="cursor: default;"></canvas>
+    <div class="widget-example-element" id="widget-example-element" style="display:none" __uv-attr-style="display: none"></div>
+    <div id="loader" style="display: none;">
+      <img class="logo" src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-1t1%2Clml-iog-lmgm.rne" __uv-attr-src="img/logo.png">
+      <div class="spinner" style="display: none;"></div>
+      <div class="progress" style="display: block;">
+        <div class="full" style="transform: scaleX(1);"></div>
       </div>
     </div>
-  </form>
-  <div id="mobile-buttons">
-    <div id="mobile-button" onclick="settingsPage(true)"><i class="fa-solid fa-cog"></i></div>
-    <a id="mobile-button" href="https://github.com/ruby-network/ruby" target="_blank"><i class="fa-brands fa-github"></i></a>
-    <a id="mobile-button" href="https://dsc.gg/rubynetwork" target="_blank"><i class="fa-brands fa-discord"></i></a>
-  </div>
-</div>
-<button id="exit-iframe" class="dnone" onclick="exitIframe()"><i class="fa-solid fa-circle-xmark"></i></button>
+	<script>
+	// var gameJsonUrl = "https://justbuild.nyc3.cdn.digitaloceanspaces.com/NewCI/1v1/Prod/11/3e3a3e7f9b174542bcfb0fd7615b7725/WebGL.json"; //%gameJsonUrl
+	// <script id="unity-loader" src="https://justbuild.nyc3.cdn.digitaloceanspaces.com/NewCI/1v1/Prod/11/3e3a3e7f9b174542bcfb0fd7615b7725/UnityLoader.js">
+	</script>
+	<div id="unity-loader-div"><script __uv-attr-src="https://justbuild.nyc3.cdn.digitaloceanspaces.com/NewCI/1v1/Prod/140/d463e74dc1404e9a81fa22946275eeec/WebGL.loader.js" src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-jwsvbwind%2Cn%7Bc1.adl.fieivanoaecnqpccgs%2Ccmm-NgwAI-1t1-Ppof%2F342%2Ff443g76da1606e%3Ba%3A1da02%3B44255gegc-WgbEL%2Clmafep.hs" id="unity-loader"></script></div>
+  
 
-   <div id="settings-container" class="dnone">
-  <div id="homeBar" onclick="home(settingsPage(false))">
-    <i class="fas fa-home"></i>
-    <h1> Settings </h1>
-  </div>
-  <div id="tile-container">
-    <div id="tile">
-      <h2> Title Setting </h2>
-      <input type="text" id="titleInput" name="title" class="input" placeholder="Title" onchange="setTitle(this.value)">
-      <button id="titleButton" class="button">Set</button>
-    </div>
-    <div id="tile">
-      <h2> Favicon Setting </h2>
-      <input type="text" id="faviconInput" name="favicon" class="input" placeholder="Favicon URL" onchange="favicon(this.value)">
-      <button id="faviconButton" class="button">Set</button>
-    </div>
-    <div id="tile">
-      <h2> Bare Server </h2>
-      <input type="text" id="bareInput" name="bare" class="input" placeholder="Bare Server URL" onchange="bare(this.value)">
-      <button id="bareButton" class="button">Set</button>
-    </div>
-    <div id="tile">
-      <h2> Search Engine </h2>
-      <select id="searchInput" class="select" onchange="searchSettings(this.value)">
-          <option value="https://www.google.com/search?q=%s">Google</option>
-          <option value="https://duckduckgo.com/?q=%s">DuckDuckGo</option>
-          <option value="https://www.bing.com/search?q=%s">Bing</option>
-          <option value="https://search.yahoo.com/search?p=%s">Yahoo</option>
-          <option value="https://brave.com/search?q=%s">Brave</option>
-          <option value="https://qwant.com/?q=%s">Qwant</option>
-      </select>
-    </div>
-    <div id="tile">
-      <h2> Proxy </h2>
-      <select id="proxySelect" class="select" onchange="proxyChange(this.value)">
-        <option value="uv"> UltraViolet </option>
-        <option value="dynamic"> Dynamic (Beta) </option>
-        <option value="rammerhead"> Rammerhead </option>
-      </select>
-    </div>
-    <div id="tile">
-      <h2> Theme </h2>
-      <select id="themeSelect" class="select" onchange="theme(this.value)">
-          <option value="default">Default</option>
-          <option value="pink">Pink</option>
-          <option value="blue">Blue</option>
-          <option value="green">Green</option>
-          <option value="yellow">Yellow</option>
-          <option value="dark">Dark</option>
-          <option value="purple">Purple</option>
-          <option value="violet">Violet</option>
-          <option value="red">Red</option>
-          <option value="orange">Orange</option>
-          <option value="midnight">Midnight</option>
-          <option value="space">Space</option>
-          <option value="marsh">Marsh</option>
-          <option value="basic">Basic</option>
-          <option value="pastel">Pastel</option>
-          <option value="teal">Teal</option>
-          <option value="pinkish-purple">Pinkish Purple</option>
-          <option value="pink-and-gray">Pink And Gray</option>
-          <option value="nord">Nord</option>
-          <option value="rose-pine">Rose Pine</option>
-          <option value="rose-pine-moon">Rose Pine Moon</option>
-          <option value="rose-pine-dawn">Rose Pine Dawn</option>
-          <option value="catppuccin-mocha">Catppuccin Mocha</option>
-          <option value="catppuccin-macchiato">Catppuccin Macchiato</option>
-          <option value="catppuccin-latte">Catppuccin Latte</option>
-          <option value="catppuccin-frappe">Catppuccin Frappe</option>
-          <option value="scoria">Scoria</option>
-          <option value="winter">Winter</option>
-          <option value="earth">Earth</option>
-          <option value="connected">Connected</option>
-          <option value="terminal">Terminal</option>
-          <option value="halloween">Halloween</option>
-          <option value="rainbow">Rainbow</option>
-      </select>
-    </div>
-    <div id="tile">
-      <h2> Full Screen Behavior </h2>
-      <select id="fullscreenSelect" class="select" onchange="fullScreenChange(this.value)">
-          <option value="page">Remove Nav Bar</option>
-          <option value="full">Full Screen</option>
-      </select>
-    </div>
-    <div id="tile">
-      <h2> About Blank/Blob Cloaking </h2>
-      <button id="blankButton" class="button" onclick="promptCloaking()">Toggle</button>
-    </div>
-    <div id="tile">
-      <h2> Update Service Workers </h2>
-      <button id="swUpdateButton" class="button" onclick="uninstallAllSW()">Update</button>
-    </div>
-    <div id="tile">
-      <h2> Reset Settings </h2>
-      <button id="resetButton" class="button" onclick="reset()">Reset</button>
-    </div>
-    <div id="tile">
-      <h2> Import/Export Settings </h2>
-      <button id="imExButton" class="button" onclick="importExportSettings()">Click Here</button>
-    </div>
-  </div>
-</div>
-<div class="" id="games-container">
-        <div id="homeBar" onclick="home(gamesPage(false))">
-            <i class="fas fa-home"></i>
-            <h1> Games </h1>
-        </div>
-        <button id="exit-game" onclick="exitGame()"><i class="fa-solid fa-circle-xmark"></i></button>
-        <iframe id="game-iframe" src="/js/sw/service/uv/hvtrs8%2F-1t1%2Clml"></iframe>
-    <div id="tile-container">
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/tanuki-sunset/index.html')">
-                    <img src="/games-thumb/tanuki.jpg" alt="Tanuki Sunset">
-                    <div id="seperator"></div>
-                    <h2>Tanuki Sunset</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/tunnel-rush/index.html')">
-                    <img src="/games-thumb/tunnel-rush.jpg" alt="Tunnel Rush">
-                    <div id="seperator"></div>
-                    <h2>Tunnel Rush</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/madalin-stunt-cars-2/index.html')">
-                    <img src="/games-thumb/stuntcars2.png" alt="Madalin Stunt Cars 2">
-                    <div id="seperator"></div>
-                    <h2>Madalin Stunt Cars 2</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/spank-the-monkey/index.html')">
-                    <img src="/games-thumb/moke.png" alt="Spank The Monkey">
-                    <div id="seperator"></div>
-                    <h2>Spank The Monkey</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/slope/index.html')">
-                    <img src="/games-thumb/slope.jpg" alt="Slope">
-                    <div id="seperator"></div>
-                    <h2>Slope</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/run-3/index.html')">
-                    <img src="/games-thumb/run3.png" alt="Run 3">
-                    <div id="seperator"></div>
-                    <h2>Run 3</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/pacman/index.html')">
-                    <img src="/games-thumb/pacman.jpg" alt="Pacman">
-                    <div id="seperator"></div>
-                    <h2>Pacman</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/hexgl/index.html')">
-                    <img src="/games-thumb/hexgl.jpg" alt="HexGL">
-                    <div id="seperator"></div>
-                    <h2>HexGL</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/google-snake/index.html')">
-                    <img src="/games-thumb/snake.png" alt="Google Snake">
-                    <div id="seperator"></div>
-                    <h2>Google Snake</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/google-pacman/index.html')">
-                    <img src="/games-thumb/gpacman.jpg" alt="Google Pacman">
-                    <div id="seperator"></div>
-                    <h2>Google Pacman</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/super-mario-bros./index.html')">
-                    <img src="/games-thumb/mario.webp" alt="Super Mario Bros.">
-                    <div id="seperator"></div>
-                    <h2>Super Mario Bros.</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/ducklife-2/index.html')">
-                    <img src="/games-thumb/ducklife2.jpg" alt="DuckLife 2">
-                    <div id="seperator"></div>
-                    <h2>DuckLife 2</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/ducklife-3/index.html')">
-                    <img src="/games-thumb/ducklife3.jpg" alt="DuckLife 3">
-                    <div id="seperator"></div>
-                    <h2>DuckLife 3</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/google-dino-game/index.html')">
-                    <img src="/games-thumb/chromedino.png" alt="Google Dino Game">
-                    <div id="seperator"></div>
-                    <h2>Google Dino Game</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/cookie-clicker/index.html')">
-                    <img src="/games-thumb/cookieclicker.jpg" alt="Cookie Clicker">
-                    <div id="seperator"></div>
-                    <h2>Cookie Clicker</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/retro-bowl/index.html')">
-                    <img src="/games-thumb/retrobowl.jpg" alt="Retro Bowl">
-                    <div id="seperator"></div>
-                    <h2>Retro Bowl</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/riddle-school/index.html')">
-                    <img src="/games-thumb/riddleschool.webp" alt="Riddle School">
-                    <div id="seperator"></div>
-                    <h2>Riddle School</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/riddle-school-2/index.html')">
-                    <img src="/games-thumb/riddleschool2.webp" alt="Riddle School 2">
-                    <div id="seperator"></div>
-                    <h2>Riddle School 2</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/riddle-school-3/index.html')">
-                    <img src="/games-thumb/riddleschool3.jpg" alt="Riddle School 3">
-                    <div id="seperator"></div>
-                    <h2>Riddle School 3</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/riddle-school-4/index.html')">
-                    <img src="/games-thumb/riddleschool4.jpg" alt="Riddle School 4">
-                    <div id="seperator"></div>
-                    <h2>Riddle School 4</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/riddle-school-5/index.html')">
-                    <img src="/games-thumb/riddleschool5.webp" alt="Riddle School 5">
-                    <div id="seperator"></div>
-                    <h2>Riddle School 5</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/superhot/index.html')">
-                    <img src="/games-thumb/superhot.webp" alt="SuperHot">
-                    <div id="seperator"></div>
-                    <h2>SuperHot</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/tank-trouble-2/index.html')">
-                    <img src="/games-thumb/tanktrouble.webp" alt="Tank Trouble 2">
-                    <div id="seperator"></div>
-                    <h2>Tank Trouble 2</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/temple-run-2/index.html')">
-                    <img src="/games-thumb/templerun2.jpg" alt="Temple Run 2">
-                    <div id="seperator"></div>
-                    <h2>Temple Run 2</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/flash-tetris/index.html')">
-                    <img src="/games-thumb/flashtetris.png" alt="Flash Tetris">
-                    <div id="seperator"></div>
-                    <h2>Flash Tetris</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/emulatorjs/index.html')">
-                    <img src="/games-thumb/emulatorjs.png" alt="EmulatorJS">
-                    <div id="seperator"></div>
-                    <h2>EmulatorJS</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/webretro/index.html')">
-                    <img src="/games-thumb/webretro.png" alt="WebRetro">
-                    <div id="seperator"></div>
-                    <h2>WebRetro</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/bloons/index.html')">
-                    <img src="/games-thumb/bloons.webp" alt="Bloons">
-                    <div id="seperator"></div>
-                    <h2>Bloons</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/bloons-td/index.html')">
-                    <img src="/games-thumb/bloonstd.jpg" alt="Bloons TD">
-                    <div id="seperator"></div>
-                    <h2>Bloons TD</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/bloons-td-2/index.html')">
-                    <img src="/games-thumb/bloonstd2.png" alt="Bloons TD 2">
-                    <div id="seperator"></div>
-                    <h2>Bloons TD 2</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/2048/index.html')">
-                    <img src="/games-thumb/2048.png" alt="2048">
-                    <div id="seperator"></div>
-                    <h2>2048</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/bloxors/index.html')">
-                    <img src="/games-thumb/bloxors.png" alt="Bloxors">
-                    <div id="seperator"></div>
-                    <h2>Bloxors</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/geometry-dash/index.html')">
-                    <img src="/games-thumb/geometrydash.png" alt="Geometry Dash">
-                    <div id="seperator"></div>
-                    <h2>Geometry Dash</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/stickman-hook/index.html')">
-                    <img src="/games-thumb/sticmanhook.jpg" alt="Stickman Hook">
-                    <div id="seperator"></div>
-                    <h2>Stickman Hook</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/vex-3/index.html')">
-                    <img src="/games-thumb/vex3.png" alt="Vex 3">
-                    <div id="seperator"></div>
-                    <h2>Vex 3</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/vex-4/index.html')">
-                    <img src="/games-thumb/vex4.png" alt="Vex 4">
-                    <div id="seperator"></div>
-                    <h2>Vex 4</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/vex-5/index.html')">
-                    <img src="/games-thumb/vex5.jpeg" alt="Vex 5">
-                    <div id="seperator"></div>
-                    <h2>Vex 5</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/vex-6/index.html')">
-                    <img src="/games-thumb/vex6.jpeg" alt="Vex 6">
-                    <div id="seperator"></div>
-                    <h2>Vex 6</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/vex-7/index.html')">
-                    <img src="/games-thumb/vex7.png" alt="Vex 7">
-                    <div id="seperator"></div>
-                    <h2>Vex 7</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/madalin-stunt-cars-3/index.html')">
-                    <img src="/games-thumb/stuntcars3.jpg" alt="Madalin Stunt Cars 3">
-                    <div id="seperator"></div>
-                    <h2>Madalin Stunt Cars 3</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/worlds-hardest-game/index.html')">
-                    <img src="/games-thumb/hardestgame.jpg" alt="Worlds Hardest Game">
-                    <div id="seperator"></div>
-                    <h2>Worlds Hardest Game</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/portal-flash/index.html')">
-                    <img src="/games-thumb/portaltheflashversion.jpg" alt="Portal Flash">
-                    <div id="seperator"></div>
-                    <h2>Portal Flash</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/crossy-road/index.html')">
-                    <img src="/games-thumb/crossy-road.png" alt="Crossy Road">
-                    <div id="seperator"></div>
-                    <h2>Crossy Road</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/subway-surfers/index.html')">
-                    <img src="/games-thumb/subway-surfers.png" alt="Subway Surfers">
-                    <div id="seperator"></div>
-                    <h2>Subway Surfers</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/dadish/index.html')">
-                    <img src="/games-thumb/dadish.png" alt="Dadish">
-                    <div id="seperator"></div>
-                    <h2>Dadish</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/dadish-2/index.html')">
-                    <img src="/games-thumb/dadish-2.png" alt="Dadish 2">
-                    <div id="seperator"></div>
-                    <h2>Dadish 2</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/doodle-jump/index.html')">
-                    <img src="/games-thumb/doodle-jump.png" alt="Doodle Jump">
-                    <div id="seperator"></div>
-                    <h2>Doodle Jump</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/fruit-ninja/index.html')">
-                    <img src="/games-thumb/fruit-ninja.png" alt="Fruit Ninja">
-                    <div id="seperator"></div>
-                    <h2>Fruit Ninja</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/basketball-stars/index.html')">
-                    <img src="/games-thumb/basketball-stars.png" alt="Basketball Stars">
-                    <div id="seperator"></div>
-                    <h2>Basketball Stars</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/slope-2/index.html')">
-                    <img src="/games-thumb/slope-2.png" alt="Slope 2">
-                    <div id="seperator"></div>
-                    <h2>Slope 2</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/stack/index.html')">
-                    <img src="/games-thumb/stack.png" alt="Stack">
-                    <div id="seperator"></div>
-                    <h2>Stack</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('/js/sw/service/uv/hvtrs8%2F-1t1%2Clml')">
-                    <img src="/games-thumb/1v1-lol.png" alt="1v1.lol">
-                    <div id="seperator"></div>
-                    <h2>1v1.lol</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('/js/sw/service/uv/hvtrs8%2F-sjenlqhmci.ko')">
-                    <img src="/games-thumb/shellshock.png" alt="Shell Shockers">
-                    <div id="seperator"></div>
-                    <h2>Shell Shockers</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/the-binding-of-isaac/index.html')">
-                    <img src="/games-thumb/binding-of-isaac.jpeg" alt="The Binding of Isaac">
-                    <div id="seperator"></div>
-                    <h2>The Binding of Isaac</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/eaglercraft-x/index.html')">
-                    <img src="/games-thumb/eaglerx.webp" alt="EaglerCraft X">
-                    <div id="seperator"></div>
-                    <h2>EaglerCraft X</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/mini-agario/dots.html')">
-                    <img src="/games-thumb/miniagario.png" alt="Mini Agario">
-                    <div id="seperator"></div>
-                    <h2>Mini Agario</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('/js/sw/service/uv/hvtrs8%2F-ymhmhm.ko')">
-                    <img src="/games-thumb/yohoho.jpeg" alt="YoHoHo">
-                    <div id="seperator"></div>
-                    <h2>YoHoHo</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('/js/sw/service/uv/hvtrs8%2F-pcpgr%2Fim.aoo%2F')">
-                    <img src="/games-thumb/paper.io2.webp" alt="Paper.io 2">
-                    <div id="seperator"></div>
-                    <h2>Paper.io 2</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/frogger/index.html')">
-                    <img src="/games-thumb/frogger.jpeg" alt="Frogger">
-                    <div id="seperator"></div>
-                    <h2>Frogger</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/super-mario-64/index.html')">
-                    <img src="/games-thumb/supermario64.jpeg" alt="Super Mario 64">
-                    <div id="seperator"></div>
-                    <h2>Super Mario 64</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('/js/sw/service/uv/hvtrs8%2F-xkggnay%2Chgrmkwarp%2Ccmm-')">
-                    <img src="/games-thumb/cybertanks.png" alt="CyberTanks">
-                    <div id="seperator"></div>
-                    <h2>CyberTanks</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('/js/sw/service/uv/hvtr%3A-%2Fqlktjep.ko')">
-                    <img src="/games-thumb/slitherio.webp" alt="Slither.io">
-                    <div id="seperator"></div>
-                    <h2>Slither.io</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/cat-ninja/index.html')">
-                    <img src="/games-thumb/cat-ninja.png" alt="Cat Ninja">
-                    <div id="seperator"></div>
-                    <h2>Cat Ninja</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/gun-mayhem-2/index.html')">
-                    <img src="/games-thumb/gm2.jpeg" alt="Gun Mayhem 2">
-                    <div id="seperator"></div>
-                    <h2>Gun Mayhem 2</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/super-smash-flash/index.html')">
-                    <img src="/games-thumb/ssf.jpeg" alt="Super Smash Flash">
-                    <div id="seperator"></div>
-                    <h2>Super Smash Flash</h2>
-                </div>
-            
-                <div id="tile" onclick="showGame('gms/ruby-network/ruby-assets/main/monkey-mart/index.html')">
-                    <img src="/games-thumb/monkey-mart.png" alt="Monkey Mart">
-                    <div id="seperator"></div>
-                    <h2>Monkey Mart</h2>
-                </div>
-            </div></div>
-<div id="credit">
-  <a href="https://auttaja.io/ruby" target="_blank"> Join Our Discord Server </a>
-</div>
-
- 
-
-</body><style id="stylus-4" type="text/css" class="stylus">/* i really want this to be global */
+<script __uv-attr-src="blob:https://1v1.lol/7cd2d91d-c0fb-47e9-9f5e-39b3dc0df610" src="https://ruby.jundy.org/js/sw/service/uv/bno%60%3Ajtvpq%3A-%2F3v3.non%2F5cf2f93d%2Fc2f%60-67g9%2F9d5g-19%603fc2dd630"></script><iframe __uv-attr-src="https://34fc7bfb059d05aeb2e47823419fd02a.safeframe.googlesyndication.com/safeframe/1-0-40/html/container.html" src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-36fa7%60f%60079f07agb0e67%3A21439dd22c.qadedrcmg.eomgneqyldkcctkol.aoo%2Fqadedrcmg%2F3-2-60-hvmn%2Faoltcilep.jtol" style="visibility: hidden; display: none;"></iframe><iframe __uv-attr-src="https://tpc.googlesyndication.com/sodar/sodar2/225/runner.html" src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-trc%2Cgmoelgs%7Bnfiaavimn%2Ccmm-smdcr-smdcr0%2F027%2Fpulngr%2Chvmn" width="0" height="0" style="display: none;"></iframe><iframe __uv-attr-src="https://www.google.com/recaptcha/api2/aframe" src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-wuw%2Cgmoelg.aoo%2Fpeaartahc%2Fcpk2-adrcmg" width="0" height="0" style="display: none;"></iframe><iframe name="google_ads_top_frame" id="google_ads_top_frame" style="display: none; position: fixed; left: -999px; top: -999px; width: 0px; height: 0px;"></iframe></body><style id="stylus-4" type="text/css" class="stylus">/* i really want this to be global */
 .ytp-play-progress {
     animation:7s background linear infinite !important;
     -webkit-animation:7s background linear infinite !important;
@@ -716,4 +185,4 @@ background:url("data:image/gif;base64,R0lGODlhIAAgAPcAAP//APv/AAAAAAAAAAAAAAAAAA
     -webkit-transform: scale(0.8);
     -moz-transform: scale(0.8);
     -ms-transform: scale(0.8);
-}</style></html>
+}</style><iframe id="google_esf" name="google_esf" __uv-attr-src="https://googleads.g.doubleclick.net/pagead/html/r20231017/r20190131/zrt_lookup.html" src="https://ruby.jundy.org/js/sw/service/uv/hvtrs8%2F-gmoelgafs%2Cg%2Cdmu%60lgcniak%2Cngt-pcggaf%2Fjtol-r00033037-r00392111-zpt%5Dlmoiur.jtol" style="display: none;"></iframe></html>
