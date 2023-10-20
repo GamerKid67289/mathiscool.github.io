@@ -6,8 +6,8 @@ body, h1, h2, p, ul, li {
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
+    background-color: #00eeff;
+    color: #0048ff;
 }
 
 .container {
@@ -17,8 +17,8 @@ body {
 }
 
 .header {
-    background-color: #333;
-    color: #fff;
+    background-color: #00eeff;
+    color: #0048ff;
     padding: 20px;
     text-align: center;
 }
@@ -28,15 +28,15 @@ body {
 }
 
 .content {
-    background-color: #fff;
+    background-color: #00eeff;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid #0048ff;
     border-radius: 5px;
 }
 
 .footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #00eeff;
+    color: #0048ff;
     text-align: center;
     padding: 10px;
 }
