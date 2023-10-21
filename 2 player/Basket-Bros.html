@@ -1,479 +1,482 @@
-<html lang="en"><head>
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths" lang="zxx"><head>
+    <meta name="robots" content="noindex, follow">
+
     <meta charset="utf-8">
-    <title>Basket Bros</title>
-    <meta name="robots" content="noindex,nofollow">
-    <meta name="description" content="Online multiplayer basketball! Dunk all over your bros!">
-    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="shortcut icon" type="image/png" href="./favicon.png">
-    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-GYMF5NRSDN&amp;l=dataLayer&amp;cx=c"></script><script type="text/javascript" src="./BasketBros.js?th=448"></script>
-    <script src="/js/main.js"></script>
-    <script>
-      window.addEventListener(
-        "touchmove",
-        function (event) {
-          event.preventDefault();
-        },
-        { capture: false, passive: false }
-      );
-      if (typeof window.devicePixelRatio != "undefined" && window.devicePixelRatio > 2) {
-        var meta = document.getElementById("viewport");
-        meta.setAttribute("content", "width=device-width, initial-scale=" + 2 / window.devicePixelRatio + ", user-scalable=no");
-      }
-      window.addEventListener("keydown", function (e) {
-        if ((e.keyCode == 32 || e.keyCode == 38 || e.keyCode == 40) && e.target == document.body) {
-          e.preventDefault();
-        }
-      });
-    </script>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title> Driftbossonline.github.io</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <style>
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        background: #000000;
-        color: orange;
-        height: 100%;
-        width: 100%;
-        height: 100vh;
-        width: 100vw;
-        margin: 0;
-        padding: 0;
-      }
-      .body::-webkit-scrollbar {
-        /* WebKit */
-        width: 0px;
-      }
-      #openfl-content {
-        background: #000000;
-        width: 100%;
-        height: 100%;
-      }
-      #spinner {
-        -webkit-transform-origin: 50% 50%;
-        -moz-transform-origin: 50% 50%;
-        -o-transform-origin: 50% 50%;
-        transform-origin: 50% 50%;
-        width: 82px;
-        height: 81px;
-        -webkit-animation: spin1 2s infinite linear;
-        -moz-animation: spin1 2s infinite linear;
-        -o-animation: spin1 2s infinite linear;
-        -ms-animation: spin1 2s infinite linear;
-        animation: spin1 2s infinite linear;
-      }
-    </style>
+    <!-- Place favicon.png in the root directory -->
+    <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon">
+    <!-- Font Icons css -->
+    <link rel="stylesheet" href="/assets/css/font-icons.css">
+    <!-- plugins css -->
+    <link rel="stylesheet" href="/assets/css/plugins.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!-- Responsive css -->
+    <link rel="stylesheet" href="/assets/css/responsive.css">
 
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-125804026-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "UA-125804026-2", { cookie_flags: "secure;samesite=none" });
-      gtag("config", "G-GYMF5NRSDN", { cookie_flags: "secure;samesite=none" });
-    </script>
+    <!-- Google tag (gtag.js) -->
+<script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202310170101/slotcar_library_fy2021.js"></script><script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202310170101/reactive_library_fy2021.js"></script><script src="https://partner.googleadservices.com/gampad/cookie.js?domain=driftbossonline.github.io&amp;callback=_gfp_s_&amp;client=ca-pub-9780189345222438"></script><script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202310170101/show_ads_impl_fy2021.js" id="google_shimpl"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-H071J9GLEV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    <script>
-      //Interstitial ad available event
-      document.addEventListener("aip_interstitialadavailable", function (e) {
-        console.log("An interstitial ad is available");
-      });
-    </script>
+  gtag('config', 'G-H071J9GLEV');
+</script><style type="text/css" id="operaUserStyle">
+    video {
+      filter: -opera-shader(url(data:text/plain;base64,dW5pZm9ybSBzaGFkZXIgaUNodW5rOwp1bmlmb3JtIGZsb2F0MiBpQ2h1bmtTaXplOwoKY29uc3QgZmxvYXQgVEhSRVNIT0xEX0FSRUEgPSA4MDAgKiA2MDA7CmNvbnN0IGZsb2F0IE1JTl9BUkVBID0gNDAwICogMTAwOwpjb25zdCBmbG9hdCBNSU5fU1RSSVAgPSAyMDsKY29uc3QgZmxvYXQgTUFSR0lOID0gMTsKCmhhbGYzIHBpeGVsKGNvbnN0IGludCB4LCBjb25zdCBpbnQgeSwgaW4gaGFsZjIgeHkpCnsKCXJldHVybiBpQ2h1bmsuZXZhbCh4eSArIGhhbGYyKHgsIHkpKS5yZ2I7Cn0gIAoKaGFsZjMgUkdYKGhhbGYyIHh5KXsKCWhhbGYzIGYgPQoJcGl4ZWwoLTEsLTEsIHh5KSAqICAxLiArICAgICAgICAgICAgICAgICAgICAgCglwaXhlbCggMCwtMSwgeHkpICogLTEuICsgICAgICAgICAgICAgICAgICAgIAoJcGl4ZWwoIDEsLTEsIHh5KSAqICAxLiArCgkKCXBpeGVsKC0xLCAwLCB4eSkgKiAtMS4gKyAgICAgICAgICAgICAgICAgICAgCglwaXhlbCggMCwgMCwgeHkpICogLTIuICsgICAgICAgICAgICAgICAgICAgICAKCXBpeGVsKCAxLCAwLCB4eSkgKiAtMS4gKyAgICAgICAgICAgICAgICAgICAgIAoJCglwaXhlbCgtMSwgMSwgeHkpICogIDEuICsgICAgICAgICAgICAgICAgICAgICAKCXBpeGVsKCAwLCAxLCB4eSkgKiAtMS4gKyAgICAgICAgICAgICAgICAgICAgIAoJcGl4ZWwoIDEsIDEsIHh5KSAqICAxLgoJOwoJcmV0dXJuIGYgLyAtMjsKfQoKaGFsZjMgUkdYTW9yZShoYWxmMiB4eSl7CgloYWxmMyBmID0KCXBpeGVsKC0xLC0xLCB4eSkgKiAgMS4gKyAgICAgICAgICAgICAgICAgICAgIAoJcGl4ZWwoIDAsLTEsIHh5KSAqIC0xLiArICAgICAgICAgICAgICAgICAgICAKCXBpeGVsKCAxLC0xLCB4eSkgKiAgMS4gKwoJCglwaXhlbCgtMSwgMCwgeHkpICogLTEuICsgICAgICAgICAgICAgICAgICAgIAoJcGl4ZWwoIDAsIDAsIHh5KSAqIC0xLiArICAgICAgICAgICAgICAgICAgICAgCglwaXhlbCggMSwgMCwgeHkpICogLTEuICsgICAgICAgICAgICAgICAgICAgICAKCQoJcGl4ZWwoLTEsIDEsIHh5KSAqICAxLiArICAgICAgICAgICAgICAgICAgICAgCglwaXhlbCggMCwgMSwgeHkpICogLTEuICsgICAgICAgICAgICAgICAgICAgICAKCXBpeGVsKCAxLCAxLCB4eSkgKiAgMS4gCgk7CglyZXR1cm4gZiAvIC0xOwp9CgoKaGFsZjQgbWFpbihmbG9hdDIgeHkpCnsKCWhhbGY0IGNvbG9yID0gaUNodW5rLmV2YWwoeHkpOwoJCglpZiAoY29sb3IuYSA8IDEpIHsKCQlyZXR1cm4gY29sb3I7Cgl9CgkKCWlmIChpQ2h1bmtTaXplLnggKiBpQ2h1bmtTaXplLnkgPCBNSU5fQVJFQSkgewoJCXJldHVybiBjb2xvcjsKCX0KCglpZiAoaUNodW5rU2l6ZS55IDwgTUlOX1NUUklQIHx8IGlDaHVua1NpemUueCA8IE1JTl9TVFJJUCkgewoJCXJldHVybiBjb2xvcjsKCX0KCglpZiAoeHkueCA8IE1BUkdJTiB8fCB4eS54ID4gKGlDaHVua1NpemUueCAtIE1BUkdJTikgfHwKCSAgICB4eS55IDwgTUFSR0lOIHx8IHh5LnkgPiAoaUNodW5rU2l6ZS55IC0gTUFSR0lOKSkgewogICAgCXJldHVybiBjb2xvcjsgICAgCiAgICB9CgkKCWlmIChpQ2h1bmtTaXplLnggKiBpQ2h1bmtTaXplLnkgPiBUSFJFU0hPTERfQVJFQSkgewoJCWNvbG9yID0gaGFsZjQoUkdYTW9yZSh4eSksIDEpOwoJfSBlbHNlIHsKCQljb2xvciA9IGhhbGY0KFJHWCh4eSksIDEpOwoJfQoKCXJldHVybiBjb2xvcjsKfQo=));
+    }
+  </style>
 
 
-    <script>
-      var aiptag = aiptag || {};
-      aiptag.cmd = aiptag.cmd || [];
-      aiptag.cmd.display = aiptag.cmd.display || [];
-      aiptag.cmd.player = aiptag.cmd.player || [];
-      // Settings
-      aiptag.consented = false; // GDPR setting, please set this value to false if an EU user has declined or not yet accepted marketing cookies, for users outside the EU please use true and for users accepted the GDPR also use true
+<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9780189345222438" crossorigin="anonymous" data-checked-head="true"></script>
 
-      aiptag.cmd.player.push(function () {
-        adplayer = new aipPlayer({
-          AIP_ADBREAK_COMPLETE: function () {
-            console.log("Adbreak Completed");
-            Main.DoneInterstitialAd(false);
-          },
-          AD_WIDTH: 960,
-          AD_HEIGHT: 540,
-          AD_DISPLAY: "default", //default, fullscreen, center, fill
-          TRUSTED: true,
-          LOADING_TEXT: "loading advertisement",
-          PREROLL_ELEM: function () {
-            return document.getElementById("preroll");
-          },
-          AIP_COMPLETE: function (state) {
-            /*******************
-					 ***** WARNING *****
-					*******************
-					Please do not remove the PREROLL_ELEM
-					from the page, it will be hidden automaticly.
-					If you do want to remove it use the AIP_REMOVE callback.
-					*/
-            Main.DoneVideoAd();
-            window.document.getElementById("openfl-content").focus();
-            if (state == null) state = "null";
-            console.log("Video Ad Complete: " + state);
-            SendEvent("event", "donevideo-" + lastUnitPlayed + "-" + state);
-          },
-          AIP_REMOVE: function () {
-            // Here it's safe to remove the PREROLL_ELEM from the page if you want. But it's not recommend.
-          },
-        });
-      });
+     
 
-      function ShowVideo(theUnitName = null) {
-        console.log("SHOW_VIDEO");
-        var aUnitName = "";
-        if (typeof gCrazySDK !== "undefined") {
-          gCrazySDK.addEventListener("adFinished", Main.DoneVideoAd); // reenable sound, enable ui
-          gCrazySDK.addEventListener("adError", Main.DoneVideoAd); // reenable sound, enable ui
-          gCrazySDK.requestAd();
-          console.log("CG_AD_REQUESTED");
-          SendEvent("event", "cgvideo");
-          return;
-        }
-        if (typeof adplayer === "undefined") {
-          Main.DoneVideoAd(true);
-          SendEvent("event", "video_adblocked");
-          console.log("VIDEO_ADBLOCKED");
-        } else {
-          var aStr = "preroll";
-          if (theUnitName != null) aStr = theUnitName;
-          lastUnitPlayed = aStr;
-          SendEvent("event", "startvideo-" + aStr);
+<meta http-equiv="origin-trial" content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9"></head>
 
-          aiptag.cmd.player.push(function () {
-            adplayer.startPreRoll(theUnitName);
-          });
-        }
-      }
-    </script>
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-    <script>
-      window.OneSignal = window.OneSignal || [];
-      OneSignal.push(function () {
-        OneSignal.init({
-          appId: "9e216ce8-de65-411a-8cbd-50930a7bd60c",
-        });
-      });
-    </script>
-  <script src="https://cdn.onesignal.com/sdks/OneSignalPageSDKES6.js?v=151604" async=""></script><meta http-equiv="origin-trial" content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9"></head>
-  <body style="overflow: hidden;">
-    <noscript>Enable JavaScript bro!</noscript>
-    <div id="loading" style="position: absolute; width: 392px; height: 31px; z-index: 15; top: 50%; left: 50%; margin: 100px 0px 0px -200px; background: black; display: none; visibility: hidden;"> . </div>
-
-    <div id="game2" style="width: 100%; height: 100%;">
-      <div id="basketbros-io_160x600" style="float: left; width: 0px; height: 600px; position: relative; top: 50%; transform: translateY(-50%); visibility: hidden; display: none;">
-        <script>
-          if (typeof gCrazySDK == "undefined") {
-            aiptag.cmd.display.push(function () {
-              aipDisplayTag.display("basketbros-io_160x600");
-            });
-          }
-        </script>
-      </div>
-
-      <div id="openfl-content" style="width: 100%; float: left; cursor: default;">
-        <script type="text/javascript">
-          lime.embed("BasketBros", "openfl-content", 0, 0, { parameters: {} });
-        </script><canvas width="1770" height="1800" style="transform: translateZ(0px); width: 885px; height: 900px;"></canvas>
-      <input type="text" autocapitalize="off" autocomplete="off" style="position: absolute; opacity: 0; color: transparent; left: 0px; top: 50%; width: 1px; height: 1px; pointer-events: none; z-index: -10000000;"></div>
-      <div id="preroll" style="width: 960px; height: 540px; background-color: black; display: none; position: absolute; top: 50%; left: 50%; z-index: 100; transform: translate(-50%, -50%); visibility: hidden;"></div>
-
-      <div id="basketbros-io_160x600_2" style="float: right; width: 0px; height: 600px; justify-content: right; text-align: right; position: relative; top: 50%; transform: translateY(-50%); display: none; visibility: hidden;">
-        <script>
-          if (typeof gCrazySDK == "undefined") {
-            aiptag.cmd.display.push(function () {
-              aipDisplayTag.display("basketbros-io_160x600_2");
-            });
-          }
-        </script>
-      </div>
-      <div id="basketbros-io_300x250" style="width: 300px; height: 250px; visibility: hidden; display: none; position: absolute; top: 30px; left: 30px; z-index: 100;"> . </div>
-      <div id="basketbros-io_300x250_2" style="width: 300px; height: 250px; visibility: hidden; display: none; position: absolute; top: 30px; left: 30px; z-index: 100;"> . </div>
-      <div id="basketbros-io_player_300x600" style="visibility: hidden; width: 300px; height: 600px; display: none; position: absolute; top: 30px; left: 30px; z-index: 100;"> . </div>
-      <div id="basketbros-io_300x600_m" style="visibility: hidden; width: 300px; height: 600px; display: none; position: absolute; top: 30px; left: 30px; z-index: 100;"> . </div>
-      <div id="basketbros-io_728x90" style="visibility: hidden; width: 728px; height: 90px; display: none; position: absolute; top: 30px; left: 30px; z-index: 100;"> . </div>
-    </div>
-    <br>
-    <div>
-      <div class="notch-top-left" style="--notch-color: var(--background-color);"></div>
-      <div class="info-box">
-        <h3>About BasketBros</h3>
-        <p>Alt link: www.lookinthe.net. Fun, fast-paced 1 on 1 basketball game with lots of action. Pick from a variety of characters and let the play begin. Go for crazy dunks, hit the stepback 3, or maybe even punch out your opponent!</p>
-        <p>The controls are very simple: Use either the arrow keys or wasd to control your baller. Jump by pressing the up arrow, and jump again to shoot. Enter/Space will attack if you are on defense.</p>
-        <p>Be sure to allow notifications so you will know when fun new basketball characters are added to the game!</p>
-      </div>
-      <div class="info-box">
-        <h3>FAQ</h3>
-        <b>Why isn't the game loading?</b>
-        <p>You should check your internet connection and make sure our site isn't blocked. Also, disable all ad blockers.</p>
-        <b>How do I play?</b>
-        <p>Just hop in and go dunk on some fools!</p>
-        <b>Which browser should I use?</b>
-        <p>You should use chrome. It is the only browser guaranteed to work. BasketBros has also been tested to work on FireFox and Safari, but not guaranteed.</p>
-      </div>
-    </div>
-    <div class="section">
-      <div style="display: flex; flex-direction: row; flex-wrap: wrap; margin: 10px; padding: 2px; justify-content: center;">
-        <div class="partner">
-          <script>
-            function getPartner(y) {
-              var referrer = document.referrer;
-              if (referrer.includes("crazygames")) {
-                return (
-                  '<center><br><div style="transform:translate(' +
-                  "-50" +
-                  "px," +
-                  y +
-                  'px); width=70%; z-index: 101; text-align:right;><font style="font-weight:normal;font-family:Arial;color:#010101;font-size:20px;"><a href="https://crazygames.com" target="_blank">Crazy Games</a></font><br></div></center>'
-                );
-              } else if (referrer.includes("iogames.space")) {
-                return (
-                  '<center><br><div style="transform:translate(' +
-                  "-50" +
-                  "px," +
-                  y +
-                  'px); width=70%; z-index: 101; text-align:right;><font style="font-weight:normal;font-family:Arial;color:#010101;font-size:20px;"><a href="https://iogames.space" target="_blank">IO Games</a></font><br></div></center>'
-                );
-              } else if (referrer.includes("poki")) {
-                return (
-                  '<center><br><div style="transform:translate(' +
-                  "-50" +
-                  "px," +
-                  y +
-                  'px); width=70%; z-index: 101; text-align:right;><font style="font-weight:normal;font-family:Arial;color:#010101;font-size:20px;">Check out our friends at <a href="https://poki.com" target="_blank">Poki</a></font><br></div></center>'
-                );
-              } else if (referrer.includes("silver")) {
-                return (
-                  '<center><br><div style="transform:translate(' +
-                  "-50" +
-                  "px," +
-                  y +
-                  'px); width=70%; z-index: 101; text-align:right;><font style="font-weight:normal;font-family:Arial;color:#010101;font-size:20px;"><a href="https://silvergames.com" target="_blank">Silver Games</a></font><br></div></center>'
-                );
-              } else {
-                return (
-                  '<center><br><div style="transform:translate(' +
-                  "-50" +
-                  "px," +
-                  y +
-                  'px); width=70%; z-index: 101; text-align:right;><font style="font-weight:normal;font-family:Arial;color:#010101;font-size:20px;"><a href="https://crazygames.com" target="_blank">Crazy Games</a></font><br></div></center>'
-                );
-              }
-              return "";
-            }
-            document.write(getPartner(0));
-          </script><center><br><div style="transform:translate(-50px,0px); width=70%; z-index: 101; text-align:right;><font style=" font-weight:normal;font-family:arial;color:#010101;font-size:20px;"=""><a href="https://crazygames.com" target="_blank">Crazy Games</a><br></div></center>
-        </div>
-        <br>
-        <br>
-        <div class="partner">&nbsp; Would you like to be a partner too? Contact: echo-the-coder@tuta.io </div>
-      </div>
-    </div>
-    <div class="section">
-      <div style="display: flex; flex-direction: row; flex-wrap: wrap; margin: 10px; padding: 2px; justify-content: center;">
-        <div class="partner">Mirrors/Proxies: <a href="/">Basket Bros Unblocked / BasketBros Unblocked</a><br></div>
-      </div>
-    </div>
-
+<body style="padding: 0px;">
     
-    <script>
-      var lastRefresh = 0;
-      function ShowAd1(doRefresh) {
-        if (/Android|webOS|iPhone|iPad|iPod|Opera Mini/i.test(navigator.userAgent)) {
-          return;
-        }
-        var l = window.document.getElementById("basketbros-io_160x600");
-        if (l == null) return;
-        l.style.display = "";
-        l.style.visibility = "visible";
 
-        l = window.document.getElementById("basketbros-io_160x600");
-        if (l == null) return;
-        l.style.display = "";
-        l.style.visibility = "visible";
 
-        if (typeof gCrazySDK !== "undefined") {
-          var d = new Date();
-          var ms = d.getTime();
-          if (ms - lastRefresh > 10000) {
-            gCrazySDK.requestResponsiveBanner(["basketbros-io_160x600"]);
-            lastRefresh = ms;
-          }
-        } else if (typeof aipDisplayTag !== "undefined") {
-          aipDisplayTag.refresh("basketbros-io_160x600");
-          aipDisplayTag.refresh("basketbros-io_160x600_2");
-        }
-      }
 
-      var lastRefresh6 = 0;
-      function ShowAd6() {
-        if (/Android|webOS|iPhone|iPad|iPod|Opera Mini/i.test(navigator.userAgent)) {
-          return;
-        }
-        var l = window.document.getElementById("basketbros-io_300x250");
-        if (l == null) {
-          return;
-        }
-        l.style.display = "";
-        l.style.visibility = "visible";
+<!-- Body main wrapper start -->
+<div class="body-wrapper" style="height: auto !important;">
 
-        if (typeof gCrazySDK !== "undefined") {
-          var d = new Date();
-          var ms = d.getTime();
-          if (ms - lastRefresh6 > 10000) {
-            //hndled by the first banner request
-            //gCrazySDK.requestBanner([{containerId: 'basketbros-io_300x250',size: '300x250',}]);
-            //gCrazySDK.requestResponsiveBanner(["basketbros-io_300x250"]);
-            lastRefresh6 = ms;
-          }
-        } else if (typeof aipDisplayTag !== "undefined") {
-          aipDisplayTag.refresh("basketbros-io_300x250");
-        }
-      }
+    <!-- HEADER AREA START (header-4) -->
+    <header class="ltn__header-area ltn__header-7 section-bg-6">
+       
+        
+        <!-- ltn__header-middle-area start -->
+        <div class="ltn__header-middle-area ltn__header-sticky ltn__sticky-bg-white plr--5---">
+            <div class="container">
+                <div class="row">
+                    <div class="col logo-column">
+                        <div class="site-logo">
+                            <a href="/"><img src="/assets/img/logo.png" alt="Logo"></a>
+                        </div>
+                    </div>
+                    <div class="col header-menu-column">
+                        <div class="header-menu d-none d-xl-block">
+                            <nav>
+                                <div class="ltn__main-menu">
+                                    <ul style="padding-left: 100px;">
+                                    
+                                       <li class="menu-icon"><a href="/category/car.html">Car</a>
+                                            
+                                        </li>
 
-      var lastRefresh2 = 0;
-      function ShowAd2() {
-        if (/Android|webOS|iPhone|iPad|iPod|Opera Mini/i.test(navigator.userAgent)) {
-          return;
-        }
-        var l = window.document.getElementById("basketbros-io_300x250_2");
-        if (l == null) return;
-        l.style.display = "";
-        l.style.visibility = "visible";
+                                        <li class="menu-icon"><a href="/category/shooting.html">Shooting</a>
+                                            
+                                        </li>
 
-        if (typeof gCrazySDK !== "undefined") {
-          var d = new Date();
-          var ms = d.getTime();
-          if (ms - lastRefresh2 > 10000) {
-            //hndled by the first banner request
-            //gCrazySDK.requestBanner([{containerId: 'basketbros-io_300x250_2',size: '300x250',}]);
-            gCrazySDK.requestResponsiveBanner(["basketbros-io_300x250", "basketbros-io_300x250_2"]);
+                                        <li class="menu-icon"><a href="/category/racing.html">Racing</a>
+                                            
+                                        </li> 
 
-            lastRefresh2 = ms;
-          }
-        } else if (typeof aipDisplayTag !== "undefined") {
-          aipDisplayTag.refresh("basketbros-io_300x250_2");
-        }
-      }
-      function ShowAd3() {
-        if (/Android|webOS|iPhone|iPad|iPod|Opera Mini/i.test(navigator.userAgent)) {
-          return;
-        }
-        var l = window.document.getElementById("basketbros-io_728x90");
-        if (l == null) return;
-        l.style.display = "";
-        l.style.visibility = "visible";
-        if (typeof gCrazySDK !== "undefined") {
-          gCrazySDK.requestResponsiveBanner(["basketbros-io_728x90"]);
-        } else if (typeof aipDisplayTag !== "undefined") aipDisplayTag.refresh("basketbros-io_728x90");
-      }
-      function ShowAd4() {
-        if (/Android|webOS|iPhone|iPad|iPod|Opera Mini/i.test(navigator.userAgent)) {
-          return;
-        }
-        if (window.innerWidth < 1200) return;
-        var l = window.document.getElementById("basketbros-io_player_300x600");
-        if (l == null) return;
-        l.style.display = "";
-        l.style.visibility = "visible";
-        if (typeof gCrazySDK !== "undefined") {
-          gCrazySDK.requestResponsiveBanner(["basketbros-io_player_300x600"]);
-          //gCrazySDK.requestBanner([{containerId: 'basketbros-io_player_300x600',size: '300x600',}]);
-        } else if (typeof aipDisplayTag !== "undefined") aipDisplayTag.refresh("basketbros-io_player_300x600");
-      }
-      function ShowAd7() {
-        if (/Android|webOS|iPhone|iPad|iPod|Opera Mini/i.test(navigator.userAgent)) {
-          return;
-        }
-        if (window.innerWidth < 1200) return;
-        var l = window.document.getElementById("basketbros-io_300x600_m");
-        if (l == null) return;
-        l.style.display = "";
-        l.style.visibility = "visible";
-        if (typeof gCrazySDK !== "undefined") {
-          gCrazySDK.requestResponsiveBanner(["basketbros-io_player_300x600"]);
-          //gCrazySDK.requestBanner([{containerId: 'basketbros-io_player_300x600',size: '300x600',}]);
-        } else if (typeof aipDisplayTag !== "undefined") aipDisplayTag.refresh("basketbros-io_300x600_m");
-      }
+                                        <li class="menu-icon"><a href="/category/skill.html">Skill</a>
+                                            
+                                        </li>
 
-      function right(str, chr) {
-        return str.slice(str.length - chr, str.length);
-      }
-      function SetCGInviteLink() {
-        if (typeof gCrazySDK !== "undefined") {
-          var meta = document.getElementById("cglink");
-          var aStr = meta.value;
-          aStr = right(aStr, 8);
-          var aCGLink = gCrazySDK.inviteLink({ roomId: aStr });
-          meta.value = aCGLink;
-          meta.select;
-          document.execCommand("Copy");
-          console.log("COPIED CG URL");
-        }
-      }
+                                        <li class="menu-icon"><a href="/category/2-player.html">2Player</a>
+                                           
+                                        </li>
 
-      function ShowAdBreak() {
-        //check if the adslib is loaded correctly or blocked by adblockers etc.
-        if (typeof gCrazySDK !== "undefined") {
-          Main.DoneInterstitialAd(false);
-          return;
-        }
+                                        <li class="menu-icon"><a target="”_blank”" href="https://forms.gle/qsP2mk2CrQdBu9Jv5">Request a game</a>
+                                           
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- ltn__header-middle-area end -->
+    </header>
+    <!-- HEADER AREA END -->
 
-        if (typeof adplayer === "undefined") {
-          Main.DoneInterstitialAd(true);
-          return;
-        }
-        aiptag.cmd.player.push(function () {
-          adplayer.startAdBreak();
-        });
-      }
 
-      document.getElementById("openfl-content").addEventListener("wheel", doScroll);
-      function doScroll(event) {
-        window.scroll(0, window.scrollY + event.deltaY);
-      }
 
-      /*		setInterval(function () { 
-			var l = window.document.getElementById('basketbros-io_160x600');
-			if(l != null && typeof l.style !== 'undefined' && l.style.visibility == 'visible') {
-				ShowAd5();
-			}
-		}, 30000);
 
-		setInterval(function () { 
-			var l = window.document.getElementById('basketbros-io_160x600_2');
-			if(l != null && typeof l.style !== 'undefined' && l.style.visibility == 'visible') {
-				ShowAd1();
-			}
-		}, 32000);*/
+<!-- iframe Game -->
+<div style="padding-top: 30px; height: auto !important;" class="container" align="Center">
 
-      var sid = "vqpdso5mdr0n80kkknmkbi3ntg";
-      function updateStatus(fromEvent = false) {
-        const req = new XMLHttpRequest();
-        var aStr = "recordsession.php?s=" + sid;
-        if (fromEvent == true) aStr = aStr + "&e=1";
-        req.open("GET", aStr);
-        req.send();
-      }
-      function SendEvent(theEvent, theAction) {
-        gtag(theEvent, theAction);
-        updateStatus(true);
-        //console.log("Sending event: " + theEvent + "/" + theAction);
-      }
-      //setInterval(function() { updateStatus, 4*60*1000);
-      updateStatus(true);
+    <div class="row" style="height: auto !important;">
+      <div class="col-md-9">
 
-      //setInterval(ClearAds, 2000);
-    </script>
+  <iframe class="gm-iframe" id="gm-area" src="https://bonbang.github.io/store4/basket-bros" width="810" height="540" scrolling="none" frameborder="0" allowfullscreen=""></iframe>
+
+   <div style="padding-top: 10px;" class="container" align="Center">    
+    <button class="btn theme-btn-1 btn-effect-1 text-uppercase" onclick="openFullscreen();">FullScreen</button>
+   </div>
+     </div>
+
+
+<script>
+var elem = document.getElementById("gm-area");
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+}
+</script>
+
+
+
+
+
+<div class="col-md-3" style="height: auto !important;">
+
+<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9780189345222438" crossorigin="anonymous" data-checked-head="true"></script>
+<!-- doc2 -->
+<ins class="adsbygoogle" style="display: block; height: 600px;" data-ad-client="ca-pub-9780189345222438" data-ad-slot="3192444085" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done" data-ad-status="filled"><div id="aswift_1_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 600px; width: 263px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: visible;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:263px;height:600px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="263" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-9780189345222438&amp;output=html&amp;h=600&amp;slotname=3192444085&amp;adk=3773045989&amp;adf=995855647&amp;pi=t.ma~as.3192444085&amp;w=263&amp;fwrn=4&amp;fwrnh=100&amp;lmt=1697627440&amp;rafmt=1&amp;format=263x600&amp;url=https%3A%2F%2Fdriftbossonline.github.io%2Fgo%2Fbasket-bros.html&amp;fwr=0&amp;fwrattr=true&amp;rpe=1&amp;resp_fmts=4&amp;wgl=1&amp;uach=WyJtYWNPUyIsIjEwLjE1LjciLCJ4ODYiLCIiLCIxMDIuMC40ODgwLjk5IixbXSwwLG51bGwsIjY0IixbWyJDaHJvbWl1bSIsIjExNi4wLjU4NDUuMTg4Il0sWyJOb3QpQTtCcmFuZCIsIjI0LjAuMC4wIl0sWyJPcGVyYSBHWCIsIjEwMi4wLjQ4ODAuOTkiXV0sMF0.&amp;dt=1697902755001&amp;bpp=23&amp;bdt=1437&amp;idt=1829&amp;shv=r20231017&amp;mjsv=m202310170101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=0x0&amp;nras=1&amp;correlator=469136712751&amp;frm=20&amp;pv=1&amp;ga_vid=108115023.1697834522&amp;ga_sid=1697902757&amp;ga_hid=1034211651&amp;ga_fc=1&amp;u_tz=-240&amp;u_his=3&amp;u_h=900&amp;u_w=1440&amp;u_ah=900&amp;u_aw=1440&amp;u_cd=30&amp;u_sd=2&amp;dmc=8&amp;adx=1015&amp;ady=99&amp;biw=1384&amp;bih=800&amp;scr_x=0&amp;scr_y=0&amp;eid=44759926%2C44759875%2C44805112%2C44805533%2C44805680%2C44805921%2C44805932%2C31078301%2C44806140&amp;oid=2&amp;pvsid=3560711657681710&amp;tmod=2086111964&amp;uas=0&amp;nvt=1&amp;ref=https%3A%2F%2Fdriftbossonline.github.io%2Fcategory%2F2-player.html&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1440%2C0%2C1440%2C900%2C1399%2C800&amp;vis=1&amp;rsz=%7C%7CpEe%7C&amp;abl=CS&amp;pfx=0&amp;fu=128&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;fsb=1&amp;xpc=oE086ka7eA&amp;p=https%3A//driftbossonline.github.io&amp;dtd=1886" data-google-container-id="a!2" data-google-query-id="CJLx8NW8h4IDFU680QQdHKIPwA" data-load-complete="true"></iframe></div></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+        </div>
+        </div>
+
+
+</div>
+<!-- End iframe Game -->
+
+
+<!-- <div style="padding-top:30px" align="center">
+ <h2 class="section-title"> Drift Boss </h2>
+</div>
+ -->
+
+    <!-- PRODUCT AREA START -->
+    <div style="padding-top: 20px;" class="ltn__product-area ltn__product-gutter  pt-90 pb-40---">
+        <div class="container">
+            <div class="row">
+
+
+    <div style="padding-bottom:50px">
+    <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9780189345222438" crossorigin="anonymous" data-checked-head="true"></script>
+<!-- ngang2 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9780189345222438" data-ad-slot="6775098893" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+         
+</div>
+
+
+
+                <div class="col-lg-12">
+            </div>
+            <div class="row justify-content-center">
+                
+
+   
+                
+
+
+		<!-- ltn__product-item -->
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                    <div class="ltn__product-item text-center">
+                        <div class="product-img">
+                        <a href="/go/temple-of-boom.html"><img src="https://bonbang.github.io/img/temple-of-boom.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+        <!-- ltn__product-item -->
+
+
+
+		<!-- ltn__product-item -->
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                    <div class="ltn__product-item text-center">
+                        <div class="product-img">
+                        <a href="/go/monster-tracks.html"><img src="https://bonbang.github.io/img/monster-tracks.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+        <!-- ltn__product-item -->
+
+
+
+		<!-- ltn__product-item -->
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                    <div class="ltn__product-item text-center">
+                        <div class="product-img">
+                        <a href="/go/escaping-the-prison.html"><img src="https://bonbang.github.io/img/escaping-the-prison.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+        <!-- ltn__product-item -->
+
+
+
+		<!-- ltn__product-item -->
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                    <div class="ltn__product-item text-center">
+                        <div class="product-img">
+                        <a href="/go/jumping-shell.html"><img src="https://bonbang.github.io/img/jumping-shell.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+        <!-- ltn__product-item -->
+
+
+
+		<!-- ltn__product-item -->
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                    <div class="ltn__product-item text-center">
+                        <div class="product-img">
+                        <a href="/go/happy-room.html"><img src="https://bonbang.github.io/img/happy-room.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+        <!-- ltn__product-item -->
+
+
+
+		<!-- ltn__product-item -->
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                    <div class="ltn__product-item text-center">
+                        <div class="product-img">
+                        <a href="/go/friday-night-funkin.html"><img src="https://bonbang.github.io/img/friday-night-funkin.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+        <!-- ltn__product-item -->
+
+
+
+		<!-- ltn__product-item -->
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                    <div class="ltn__product-item text-center">
+                        <div class="product-img">
+                        <a href="/go/stickman-climb-2.html"><img src="https://bonbang.github.io/img/stickman-climb-2.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+        <!-- ltn__product-item -->
+
+
+
+		<!-- ltn__product-item -->
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                    <div class="ltn__product-item text-center">
+                        <div class="product-img">
+                        <a href="/go/basketball-line.html"><img src="https://bonbang.github.io/img/basketball-line.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+        <!-- ltn__product-item -->
+
+
+
+		<!-- ltn__product-item -->
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                    <div class="ltn__product-item text-center">
+                        <div class="product-img">
+                        <a href="/go/water-color-sort.html"><img src="https://bonbang.github.io/img/water-color-sort.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+        <!-- ltn__product-item -->
+
+
+
+		<!-- ltn__product-item -->
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                    <div class="ltn__product-item text-center">
+                        <div class="product-img">
+                        <a href="/go/2048-cupcakes.html"><img src="https://bonbang.github.io/img/2048-cupcakes.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+        <!-- ltn__product-item -->
+
+
+
+		<!-- ltn__product-item -->
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                    <div class="ltn__product-item text-center">
+                        <div class="product-img">
+                        <a href="/go/soccer-skills-euro-cup.html"><img src="https://bonbang.github.io/img/soccer-skills-euro-cup.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+        <!-- ltn__product-item -->
+
+
+
+		<!-- ltn__product-item -->
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                    <div class="ltn__product-item text-center">
+                        <div class="product-img">
+                        <a href="/go/sausage-flip.html"><img src="https://bonbang.github.io/img/sausage-flip.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+        <!-- ltn__product-item -->
+
+
+
+		<!-- ltn__product-item -->
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                    <div class="ltn__product-item text-center">
+                        <div class="product-img">
+                        <a href="/go/who-is.html"><img src="https://bonbang.github.io/img/who-is.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+        <!-- ltn__product-item -->
+
+
+
+		<!-- ltn__product-item -->
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                    <div class="ltn__product-item text-center">
+                        <div class="product-img">
+                        <a href="/go/basket-bros.html"><img src="https://bonbang.github.io/img/basket-bros.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+        <!-- ltn__product-item -->
+
+
+
+		<!-- ltn__product-item -->
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                    <div class="ltn__product-item text-center">
+                        <div class="product-img">
+                        <a href="/go/stick-defenders.html"><img src="https://bonbang.github.io/img/stick-defenders.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+        <!-- ltn__product-item -->
+
+
+
+		<!-- ltn__product-item -->
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                    <div class="ltn__product-item text-center">
+                        <div class="product-img">
+                        <a href="/go/fancy-pants-3.html"><img src="https://bonbang.github.io/img/fancy-pants-3.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+        <!-- ltn__product-item -->
+
+
+
+		<!-- ltn__product-item -->
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                    <div class="ltn__product-item text-center">
+                        <div class="product-img">
+                        <a href="/go/gobble.html"><img src="https://bonbang.github.io/img/gobble.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+        <!-- ltn__product-item -->
+
+
+
+		<!-- ltn__product-item -->
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+                    <div class="ltn__product-item text-center">
+                        <div class="product-img">
+                        <a href="/go/temple-run-2.html"><img src="https://bonbang.github.io/img/temple-run-2.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+        <!-- ltn__product-item -->
+
+
+
+
+         
+
+                <!-- end -->
+            </div>
+        </div>
+    </div>
+    <!-- PRODUCT SLIDER AREA END -->
+
+
+
+<!-- <div>
+<div style="padding-top:10px" class="section-title-area text-center">
+        <h2 class="section-title section-title-border">Game Description</h2>
+</div>
+
+<div class="container relative">
+                    <div>
+                 
+                        <p>"Go Kart Go! Ultra!" stands as an electrifying and enchanting kart racing game that caters to a wide spectrum of players, transcending age barriers. Its kaleidoscopic graphics and ingeniously designed tracks transport players into a realm of exhilarating entertainment. The game boasts a lineup of endearing characters, each with their unique quirks, inviting players to dive into a world of spirited competition. Navigating through tracks adorned with inventive obstacles, strategic shortcuts, and dynamic power-ups, players are in for a heart-racing experience that never loses its charm.</p>
+                        
+                        <p style="padding-top:10px"> With an intuitive control system that welcomes both novice and seasoned gamers, the title extends an invitation to engage in multiplayer modes that can either spark casual camaraderie or intense rivalries. Whether racing against AI competitors or challenging friends, "Go Kart Go! Ultra!" thrives on delivering ceaseless amusement. It's a gaming haven where players can rev their engines, tackle every curve with precision, and savor the adrenaline of victory.  </p> 
+
+
+                        <p style="padding-top:10px"> In a world brimming with virtual experiences, "Go Kart Go! Ultra!" distinguishes itself with its spirited gameplay and accessible mechanics. The game's ability to induce laughter, excitement, and friendly competition makes it an unmissable addition to any gaming library.  </p>
+
+                    </div>
+                </div>
+</div> -->
+
+
+    <!-- FOOTER AREA START -->
+    <footer class="ltn__footer-area  plr--5---">
+       
+        <div class="ltn__copyright-area ltn__copyright-2 section-bg-5">
+            <div class="container ltn__border-top-2">
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        <div class="footer-copyright-left">
+                            <div class="ltn__copyright-design clearfix">
+                                <p>© <span class="current-year">2023</span> - Driftbossonline.github.io</p>
+                            </div>
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- FOOTER AREA END -->
+
+   
+
+</div>
+<!-- Body main wrapper end -->
+
+    <!-- preloader area start -->
+    <div class="preloader d-none" id="preloader">
+        <div class="preloader-inner">
+            <div class="spinner">
+                <div class="dot1"></div>
+                <div class="dot2"></div>
+            </div>
+        </div>
+    </div>
+    <!-- preloader area end -->
+
+    <!-- All JS Plugins -->
+    <script src="/assets/js/plugins.js"></script>
+    <!-- Main JS -->
+    <script src="/assets/js/main.js"></script>
   
-</body><style id="stylus-4" type="text/css" class="stylus">/* i really want this to be global */
+
+
+
+</div><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;" data-ad-status="unfilled"><div id="aswift_0_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-9780189345222438&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;lmt=1697627440&amp;plat=3%3A16%2C4%3A16%2C9%3A134250504%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1081344%2C32%3A32%2C41%3A32%2C42%3A32&amp;format=0x0&amp;url=https%3A%2F%2Fdriftbossonline.github.io%2Fgo%2Fbasket-bros.html&amp;ea=0&amp;pra=5&amp;wgl=1&amp;easpi=1&amp;asro=0&amp;asiscm=1&amp;aslmt=0.4&amp;asamt=-1&amp;asedf=0&amp;asefa=1&amp;aseiel=1~2&amp;itsi=23&amp;uach=WyJtYWNPUyIsIjEwLjE1LjciLCJ4ODYiLCIiLCIxMDIuMC40ODgwLjk5IixbXSwwLG51bGwsIjY0IixbWyJDaHJvbWl1bSIsIjExNi4wLjU4NDUuMTg4Il0sWyJOb3QpQTtCcmFuZCIsIjI0LjAuMC4wIl0sWyJPcGVyYSBHWCIsIjEwMi4wLjQ4ODAuOTkiXV0sMF0.&amp;dt=1697902754987&amp;bpp=14&amp;bdt=1423&amp;idt=1571&amp;shv=r20231017&amp;mjsv=m202310170101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;nras=1&amp;correlator=469136712751&amp;frm=20&amp;pv=2&amp;ga_vid=108115023.1697834522&amp;ga_sid=1697902757&amp;ga_hid=1034211651&amp;ga_fc=1&amp;u_tz=-240&amp;u_his=3&amp;u_h=900&amp;u_w=1440&amp;u_ah=900&amp;u_aw=1440&amp;u_cd=30&amp;u_sd=2&amp;dmc=8&amp;adx=-12245933&amp;ady=-12245933&amp;biw=1384&amp;bih=800&amp;scr_x=0&amp;scr_y=0&amp;eid=44759926%2C44759875%2C44805112%2C44805533%2C44805680%2C44805921%2C44805932%2C31078301%2C44806140&amp;oid=2&amp;pvsid=3560711657681710&amp;tmod=2086111964&amp;uas=0&amp;nvt=1&amp;fsapi=1&amp;ref=https%3A%2F%2Fdriftbossonline.github.io%2Fcategory%2F2-player.html&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1440%2C0%2C1440%2C900%2C1399%2C800&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=32768&amp;bc=31&amp;ifi=1&amp;uci=a!1&amp;fsb=1&amp;dtd=1754" data-google-container-id="a!1" data-load-complete="true"></iframe></div></ins><a id="scrollUp" href="#top" style="display: none; position: fixed; z-index: 2147483647;"><i class="fa fa-angle-up"></i></a><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" data-anchor-status="displayed" data-anchor-shown="true" data-ad-status="filled" style="display: none; width: 100% !important; height: 95px !important; bottom: 0px; clear: none !important; float: none !important; left: 0px; margin: 0px !important; max-height: none !important; max-width: none !important; opacity: 1; overflow: visible !important; padding: 0px !important; position: fixed; right: auto !important; top: auto !important; vertical-align: baseline !important; visibility: visible !important; z-index: 2147483647; background: rgb(250, 250, 250) !important;"><div class="grippy-host"></div><div id="aswift_2_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none !important; height: 90px !important; width: 100% !important; margin: 0px !important; padding: 0px !important; position: relative !important; visibility: visible !important; background-color: transparent !important; display: inline-block !important; inset: auto !important; clear: none !important; float: none !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; vertical-align: baseline !important; z-index: auto !important;"><iframe id="aswift_2" name="aswift_2" style="width: 728px !important; height: 90px !important; display: block; margin: 0px auto;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="https://googleads.g.doubleclick.net/pagead/html/r20231017/r20110914/zrt_lookup.html?fsb=1#RS-0-&amp;adk=1812271801&amp;client=ca-pub-9780189345222438&amp;fa=1&amp;ifi=3&amp;uci=a!3&amp;btvi=1&amp;xpc=iCZKrEmxmG&amp;p=https%3A//driftbossonline.github.io" data-google-container-id="a!3" data-google-query-id="CKzt6tW8h4IDFYqo0QQdidoNHg" data-load-complete="true"></iframe></div></ins><iframe src="https://www.google.com/recaptcha/api2/aframe" width="0" height="0" style="display: none;"></iframe></body><style id="stylus-4" type="text/css" class="stylus">/* i really want this to be global */
 .ytp-play-progress {
     animation:7s background linear infinite !important;
     -webkit-animation:7s background linear infinite !important;
@@ -541,4 +544,4 @@ background:url("data:image/gif;base64,R0lGODlhIAAgAPcAAP//APv/AAAAAAAAAAAAAAAAAA
     -webkit-transform: scale(0.8);
     -moz-transform: scale(0.8);
     -ms-transform: scale(0.8);
-}</style></html>
+}</style><iframe id="google_esf" name="google_esf" src="https://googleads.g.doubleclick.net/pagead/html/r20231017/r20190131/zrt_lookup.html" style="display: none;"></iframe></html>
