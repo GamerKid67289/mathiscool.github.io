@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gxmes</title>
+    <link rel="shortcut icon" href="Untitled.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+    <header>
+        <h1>Slope</h1>
+    </header>
+    <main>
+    <iframe src="slope.html" frameborder="0"></iframe>
+    <button onclick="openGame()">FULL SCREEN</button>
+    <script>
+        function openGame(){
+           var win = window.open()
+           var url = "https://sites.google.com/view/slopegame222/home"
+           var iframe = win.document.createElement('iframe')
+           iframe.style.width = "100%";
+           iframe.style.height = "100%";
+           iframe.style.border = "none";
+           iframe.src = url
+           win.document.appendChild(iframe)
+        }
+    </script>
+</body>
+</html>
