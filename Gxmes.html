@@ -119,18 +119,20 @@
         // Clear previous search results
         searchResults.innerHTML = '';
 
-        // Display the filtered games with clickable links
+        // Display the filtered games as clickable images
         if (filteredGames.length === 0) {
             searchResults.innerHTML = 'No results found.';
         } else {
             const resultList = document.createElement('ul');
             filteredGames.forEach(game => {
                 const listItem = document.createElement('li');
-                const gameLink = document.createElement('a');
-                gameLink.textContent = game.name;
-                gameLink.href = game.url; // Set the URL for the game
-                gameLink.target = '_blank'; // Open the link in a new tab
-                listItem.appendChild(gameLink);
+                const gameImage = document.createElement('img');
+                gameImage.src = game.imageUrl; // Set the image URL
+                gameImage.alt = game.name; // Set the alt text for accessibility
+                gameImage.addEventListener('click', function () {
+                    window.open(game.url, '_blank'); // Open the URL in a new tab when the image is clicked
+                });
+                listItem.appendChild(gameImage);
                 resultList.appendChild(listItem);
             });
             searchResults.appendChild(resultList);
