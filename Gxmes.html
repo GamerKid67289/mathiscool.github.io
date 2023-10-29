@@ -11,6 +11,7 @@
         <input type="text" placeholder="Search..." name="q">
         <button type="submit">Search</button>
     </form>
+    <div id="search-results"></div>
 </div>
   <style>
     /* Define the style for the dropdown menu */
@@ -88,15 +89,36 @@ button {
   });
 </script>
 <script>
-  const form = document.querySelector('form');
+  const form = document.getElementById('search-form');
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
 
   form.addEventListener('submit', function(event) {
       event.preventDefault(); // Prevent the default form submission
 
-      const searchInput = form.querySelector('input[name="q"]').value;
+      const query = searchInput.value;
 
-      // Implement your search logic here, e.g., fetch results and update the page
-      // You can use AJAX or fetch to communicate with your server and update the page dynamically.
+      // Send an AJAX request to your server for search results
+      fetch(`/search?q=${query}`)
+          .then(response => response.json()) // Assuming the server returns JSON
+          .then(data => {
+              // Clear previous results
+              searchResults.innerHTML = '';
+
+              if (data.length === 0) {
+                  searchResults.innerHTML = 'No results found.';
+              } else {
+                  // Display search results
+                  data.forEach(result => {
+                      const resultItem = document.createElement('div');
+                      resultItem.textContent = result;
+                      searchResults.appendChild(resultItem);
+                  });
+              }
+          })
+          .catch(error => {
+              console.error('Error:', error);
+          });
   });
 </script>
 <div class="dropdown">
