@@ -54,7 +54,27 @@
     .dropdown:hover .dropdown-content {
         display: block;
     }
+
+    .search-container {
+    text-align: center;
+    margin: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 250px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
 </style>
+
+
 <script>
   const button = document.querySelector('.dropdown-button');
   const dropdownContent = document.querySelector('.dropdown-content');
@@ -67,7 +87,18 @@
       }
   });
 </script>
+<script>
+  const form = document.querySelector('form');
 
+  form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      const searchInput = form.querySelector('input[name="q"]').value;
+
+      // Implement your search logic here, e.g., fetch results and update the page
+      // You can use AJAX or fetch to communicate with your server and update the page dynamically.
+  });
+</script>
 <div class="dropdown">
   <button class="dropdown-button">Action Games</button>
   <div class="dropdown-content">
