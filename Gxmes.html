@@ -6,14 +6,10 @@
     <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
 <body>
- <div class="container">
-  <div class="search-box">
-    <input type="text" class="Search" placeholder="What are you looking for?">
-    <button type="submit" class="search-btn">
-      <i class="fa fa-search"></i>
-    </button>
-  </div>
- </div>
+  <div class="search-container">
+    <input type="text" id="search-input" placeholder="Search for games...">
+</div>
+<div id="search-results"></div>
  
  
   <style>
@@ -59,6 +55,27 @@
         display: block;
     }
 </style>
+<style>
+  .search-container {
+      text-align: center;
+      margin: 20px;
+  }
+
+  input[type="text"] {
+      padding: 10px;
+      width: 250px;
+  }
+
+  ul {
+      list-style: none;
+      padding: 0;
+  }
+
+  li {
+      padding: 5px;
+      border: 1px solid #ddd;
+  }
+</style>
 
 
 <script>
@@ -70,6 +87,41 @@
           dropdownContent.style.display = 'none';
       } else {
           dropdownContent.style.display = 'block';
+      }
+  });
+</script>
+<script>
+  // Sample list of games (you would fetch this from your data source)
+  const games = [
+      '1v1 lol',
+      'Raft Wars',
+      'Slope',
+      // Add more games here
+  ];
+
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+
+  searchInput.addEventListener('input', function () {
+      const searchQuery = searchInput.value.toLowerCase();
+
+      // Filter games based on the search query
+      const filteredGames = games.filter(game => game.toLowerCase().includes(searchQuery));
+
+      // Clear previous search results
+      searchResults.innerHTML = '';
+
+      // Display the filtered games
+      if (filteredGames.length === 0) {
+          searchResults.innerHTML = 'No results found.';
+      } else {
+          const resultList = document.createElement('ul');
+          filteredGames.forEach(game => {
+              const listItem = document.createElement('li');
+              listItem.textContent = game;
+              resultList.appendChild(listItem);
+          });
+          searchResults.appendChild(resultList);
       }
   });
 </script>
