@@ -99,31 +99,35 @@
         // Add more games here
     ];
 
-  const searchInput = document.getElementById('search-input');
-  const searchResults = document.getElementById('search-results');
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
 
-  searchInput.addEventListener('input', function () {
-      const searchQuery = searchInput.value.toLowerCase();
+    searchInput.addEventListener('input', function () {
+        const searchQuery = searchInput.value.toLowerCase();
 
-      // Filter games based on the search query
-      const filteredGames = games.filter(game => game.toLowerCase().includes(searchQuery));
+        // Filter games based on the search query
+        const filteredGames = games.filter(game => game.name.toLowerCase().includes(searchQuery));
 
-      // Clear previous search results
-      searchResults.innerHTML = '';
+        // Clear previous search results
+        searchResults.innerHTML = '';
 
-      // Display the filtered games
-      if (filteredGames.length === 0) {
-          searchResults.innerHTML = 'No results found.';
-      } else {
-          const resultList = document.createElement('ul');
-          filteredGames.forEach(game => {
-              const listItem = document.createElement('li');
-              listItem.textContent = game;
-              resultList.appendChild(listItem);
-          });
-          searchResults.appendChild(resultList);
-      }
-  });
+        // Display the filtered games with clickable links
+        if (filteredGames.length === 0) {
+            searchResults.innerHTML = 'No results found.';
+        } else {
+            const resultList = document.createElement('ul');
+            filteredGames.forEach(game => {
+                const listItem = document.createElement('li');
+                const gameLink = document.createElement('a');
+                gameLink.textContent = game.name;
+                gameLink.href = game.url; // Set the URL for the game
+                gameLink.target = '_blank'; // Open the link in a new tab
+                listItem.appendChild(gameLink);
+                resultList.appendChild(listItem);
+            });
+            searchResults.appendChild(resultList);
+        }
+    });
 </script>
 
 <div class="dropdown">
