@@ -87,39 +87,7 @@ button {
       }
   });
 </script>
-<script>
-  const form = document.getElementById('search-form');
-  const searchInput = document.getElementById('search-input');
-  const searchResults = document.getElementById('search-results');
 
-  form.addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevent the default form submission
-
-      const query = searchInput.value;
-
-      // Send an AJAX request to your server for search results
-      fetch(`/search?q=${query}`)
-          .then(response => response.json()) // Assuming the server returns JSON
-          .then(data => {
-              // Clear previous results
-              searchResults.innerHTML = '';
-
-              if (data.length === 0) {
-                  searchResults.innerHTML = 'No results found.';
-              } else {
-                  // Display search results
-                  data.forEach(result => {
-                      const resultItem = document.createElement('div');
-                      resultItem.textContent = result;
-                      searchResults.appendChild(resultItem);
-                  });
-              }
-          })
-          .catch(error => {
-              console.error('Error:', error);
-          });
-  });
-</script>
 <div class="dropdown">
   <button class="dropdown-button">Action Games</button>
   <div class="dropdown-content">
