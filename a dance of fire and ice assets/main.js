@@ -34,6 +34,7 @@ function update() {
   for (let i = 0; i < blocks.length; i++) {
     drawBlock(blocks[i]);
   }
+  drawBlock(blocks[currentIndex]);
 }
 
 function gameLoop() {
