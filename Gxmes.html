@@ -93,8 +93,8 @@
 <script>
   // Sample list of games (you would fetch this from your data source)
   const games = [
-        { name: "1v1 lol", imageUrl: 'download(3).jpeg', url: "1v1lol.html"},
-        { name: "Raft Wars", imageUrl: 'download(4).jpeg',url: "raftwars.html"},
+        { name: "1v1 lol", url: "1v1lol.html"},
+        { name: "Raft Wars", url: "raftwars.html"},
         { name: 'Slope', url: 'SLOPE.html' },
         { name: 'Retro Bowl', url: 'retro-bowl.html' },
         { name: 'Fnaf1', url: 'fnaf1.html' },
@@ -119,20 +119,18 @@
         // Clear previous search results
         searchResults.innerHTML = '';
 
-        // Display the filtered games as clickable images
+        // Display the filtered games with clickable links
         if (filteredGames.length === 0) {
             searchResults.innerHTML = 'No results found.';
         } else {
             const resultList = document.createElement('ul');
             filteredGames.forEach(game => {
                 const listItem = document.createElement('li');
-                const gameImage = document.createElement('img');
-                gameImage.src = game.imageUrl; // Set the image URL
-                gameImage.alt = game.name; // Set the alt text for accessibility
-                gameImage.addEventListener('click', function () {
-                    window.open(game.url, '_blank'); // Open the URL in a new tab when the image is clicked
-                });
-                listItem.appendChild(gameImage);
+                const gameLink = document.createElement('a');
+                gameLink.textContent = game.name;
+                gameLink.href = game.url; // Set the URL for the game
+                gameLink.target = '_blank'; // Open the link in a new tab
+                listItem.appendChild(gameLink);
                 resultList.appendChild(listItem);
             });
             searchResults.appendChild(resultList);
