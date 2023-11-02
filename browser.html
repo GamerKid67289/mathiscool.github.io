@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Search Browser</title>
-  </head>
-  <body>
-    <input type="text" id="searchInput" placeholder="Enter search query">
+<head>
+  <title>Custom Search Browser</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <h1>Custom Search Browser</h1>
+  <div class="search">
+    <input type="text" id="searchInput" placeholder="Search...">
     <button onclick="search()">Search</button>
-    
-    <div id="searchResults"></div>
+  </div>
 
-    <script src="script.js"></script>
-  </body>
+  <div id="results"></div>
+
+  <script src="script.js"></script>
+</body>
 </html>
