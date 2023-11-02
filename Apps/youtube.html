@@ -26,7 +26,7 @@
   <body>
     <div class="video-player-container">
       <video id="video-player" controls>
-        <source src="https://www.youtube.com/watch?v=LoZ6rWZY_kQ" type="video/mp4">
+        <source src="path/to/video.mp4" type="video/mp4">
         <!-- Add other video sources for different formats if needed -->
         Your browser does not support the video tag.
       </video>
@@ -37,10 +37,20 @@
       </div>
     </div>
     
+    <h2>Add a YouTube Video</h2>
+    <form id="video-form" action="submitVideo.php" method="POST">
+      <label for="video-title">Title:</label>
+      <input type="text" id="video-title" name="videoTitle"><br>
+      <label for="video-link">YouTube Video Link:</label>
+      <input type="text" id="video-link" name="videoLink"><br>
+      <input type="submit" value="Submit">
+    </form>
+    
     <script>
       var video = document.getElementById("video-player");
       var playPauseButton = document.getElementById("play-pause-button");
       var seekBar = document.getElementById("seek-bar");
+      var videoForm = document.getElementById("video-form");
       
       // Event listener for play/pause button
       playPauseButton.addEventListener("click", function() {
@@ -58,6 +68,31 @@
         var time = video.duration * (seekBar.value / 100);
         video.currentTime = time;
       });
+      
+      // Event listener for video form submission
+      videoForm.addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
+        
+        var videoLinkInput = document.getElementById("video-link");
+        var videoId = extractVideoId(videoLinkInput.value); // Extract video ID from the submitted link
+        
+        // Do something with the extracted video ID, such as storing it in the database
+        console.log("Video ID:", videoId);
+      });
+      
+      // Helper function to extract video ID from YouTube link
+      function extractVideoId(url) {
+        // Extract video ID from various YouTube link formats
+        var videoIdRegex = /(?:youtu\.be\/|youtube(?:-nocookie)?\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/;
+        var match = url.match(videoIdRegex);
+        
+        if (match && match[1]) {
+          return match[1];
+        } else {
+          // Invalid YouTube link
+          return null;
+        }
+      }
     </script>
   </body>
 </html>
