@@ -1,6 +1,3 @@
-Certainly! Here's an updated version of the code with a simple search algorithm implemented:
-
-```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,33 +36,23 @@ Certainly! Here's an updated version of the code with a simple search algorithm 
         function performSearch(query) {
             var results = [];
 
-for (var keyword in keywords) {
-    var keywordMatches = keywords[keyword];
-    
-    // Check if any query word matches the keyword
-    for (var i = 0; i < queryWords.length; i++) {
-        var queryWord = queryWords[i];
-        
-        if (keyword.includes(queryWord)) {
-            // Add the keyword matches to the search results
-            results = results.concat(keywordMatches);
-            // Break the loop if a match is found
-            break;
-        }
-    }
-}
+            // Perform your search algorithm here
+            // This example uses a simple keyword matching approach
 
-
-           var keywords = {
-    "math": [
-        { label: "Math is Cool", link: "https://math-is-cool.netlify.app" }
-    ],
-    "project": [
-        { label: "Project Fun", link: "https://sites.google.com/view/project-fun" }
-    ],
-    // Add more keywords and results as needed
-};
-
+            var keywords = {
+                "math": [
+                    { label: "Math is Cool", link: "https://math-is-cool.netlify.app" }
+                ],
+                "project": [
+                    { label: "Project Fun", link: "https://sites.google.com/view/project-fun2"}
+                ],
+                "games": [
+                    { label: "Games 10x10", link: "https://sites.google.com/view/games10x10" },
+                    { label: "1v1 lol", link: "1v1lol.html"},
+                    { label: "Raft Wars", link: "raftwars.html"},
+                    { label: 'Slope', link: 'SLOPE.html' },
+                    // Add more games here as needed
+                ]
             };
 
             // Split the query into individual words
