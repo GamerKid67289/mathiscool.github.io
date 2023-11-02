@@ -1,39 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Search Browser</title>
-  <style>
-    .search-bar {
-      display: flex;
-      margin-bottom: 20px;
-    }
-    .search-bar input {
-      flex-grow: 1;
-      padding: 5px;
-      font-size: 16px;
-    }
-    .search-btn {
-      padding: 5px 10px;
-      font-size: 16px;
-    }
-    .search-results {
-      margin-top: 20px;
-    }
-    .search-results a {
-      display: block;
-      margin-bottom: 10px;
-      font-size: 18px;
-      color: blue;
-      text-decoration: underline;
-    }
-  </style>
+    <title>Search Browser</title>
 </head>
 <body>
-  <div class="search-bar">
-    <input type="text" id="searchInput" placeholder="Enter your search query">
-    <button type="button" class="search-btn" onclick="search()">Search</button>
-  </div>
-  <div class="search-results" id="searchResults"></div>
-  <script src="search.js"></script>
+    <form>
+        <input type="text" id="searchInput" placeholder="Enter your search query">
+        <button type="button" onclick="search()">Search</button>
+    </form>
+    
+    <h3>Search Results:</h3>
+    <ul id="searchResults"></ul>
+
+    <script>
+        function search() {
+            // Clear previous search results
+            document.getElementById("searchResults").innerHTML = "";
+
+            // Get the search query from the input field
+            var query = document.getElementById("searchInput").value;
+
+            // Perform search based on query
+            var searchResults = performSearch(query);
+
+            // Display the search results
+            displayResults(searchResults);
+        }
+
+        function performSearch(query) {
+            // Perform your search logic here
+            // You can use APIs or implement your own search algorithm
+
+            // For simplicity, let's hardcode some results based on the query
+            if (query === "math is cool") {
+                return [
+                    { label: "Math is Cool", link: "https://math-is-cool.netlify.app" }
+                ];
+            } else if (query === "games 10x10") {
+                return [
+                    { label: "Games 10x10", link: "https://sites.google.com/view/games10x10" }
+                ];
+            } else if (query === "project fun") {
+                return [
+                    { label: "Project Fun", link: "https://sites.google.com/view/project-fun2"}
+                ];
+            }
+
+            // No matching results found
+            return [];
+        }
+
+        function displayResults(results) {
+            var list = document.getElementById("searchResults");
+
+            results.forEach(function(result) {
+                var listItem = document.createElement("li");
+                var link = document.createElement("a");
+                link.textContent = result.label;
+                link.href = result.link;
+                listItem.appendChild(link);
+                list.appendChild(listItem);
+            });
+        }
+    </script>
 </body>
 </html>
