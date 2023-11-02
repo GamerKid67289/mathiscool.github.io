@@ -64,7 +64,7 @@
       });
       
       // Event listener for seek bar
-      seekBar.addEventListener("change", function() {
+      seekBar.addEventListener("input", function() {
         var time = video.duration * (seekBar.value / 100);
         video.currentTime = time;
       });
