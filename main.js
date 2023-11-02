@@ -1,6 +1,6 @@
 // Assuming you have a 'database' array of objects with 'title' and 'content' properties
 const database = [
-    { title: 'First Post', content: 'This is the content of the first post.' },
+    { title: '1v1 lol', content: '1v1.lol' },
     { title: 'Second Post', content: 'Here is the content of the second post.' },
     { title: 'Third Post', content: 'Content of the third post goes here.' }
 ];
