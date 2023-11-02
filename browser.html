@@ -1,21 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Search Browser</title>
-    <link rel="stylesheet" href="styles.css">
+  <title>Search Browser</title>
+  <style>
+    .search-bar {
+      display: flex;
+      margin-bottom: 20px;
+    }
+    .search-bar input {
+      flex-grow: 1;
+      padding: 5px;
+      font-size: 16px;
+    }
+    .search-btn {
+      padding: 5px 10px;
+      font-size: 16px;
+    }
+    .search-results {
+      margin-top: 20px;
+    }
+    .search-results a {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 18px;
+      color: blue;
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Search Browser</h1>
-    </header>
-    <div class="search-container">
-        <input type="text" id="search-input" placeholder="Type your search query">
-        <button onclick="search()">Search</button>
-    </div>
-    <div id="search-results">
-        <!-- Search results will be dynamically appended here -->
-    </div>
-
-    <script src="script.js"></script>
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Enter your search query">
+    <button type="button" class="search-btn" onclick="search()">Search</button>
+  </div>
+  <div class="search-results" id="searchResults"></div>
+  <script src="search.js"></script>
 </body>
 </html>

@@ -1,22 +1,30 @@
 function search() {
-  var searchQuery = document.getElementById("search-input").value;
-  // Here you can perform a search using the searchQuery.
-  // You can fetch data from an API or perform a search on a predefined dataset.
+  // Get the search query from the input field
+  var query = document.getElementById('searchInput').value;
 
-  // For simplicity, let's just display some static search results.
-  var searchResults = [
-      "Result 1",
-      "Result 2",
-      "Result 3",
-      "Result 4"
+  // Clear the previous search results
+  var resultsContainer = document.getElementById('searchResults');
+  resultsContainer.innerHTML = '';
+
+  // Perform your search algorithm here or use an external search API
+  // For simplicity, let's assume we have a list of predefined links
+  var links = [
+    { title: 'Google', url: 'https://www.google.com' },
+    { title: 'Stack Overflow', url: 'https://stackoverflow.com' },
+    { title: 'GitHub', url: 'https://github.com' }
+    // Add more links as needed
   ];
 
-  var resultsContainer = document.getElementById("search-results");
-  resultsContainer.innerHTML = ""; // Clear previous results
+  // Filter the links based on the search query
+  var filteredLinks = links.filter(function(link) {
+    return link.title.toLowerCase().includes(query.toLowerCase());
+  });
 
-  searchResults.forEach(function(result) {
-      var resultElement = document.createElement("p");
-      resultElement.textContent = result;
-      resultsContainer.appendChild(resultElement);
+  // Display the search results
+  filteredLinks.forEach(function(link) {
+    var resultElement = document.createElement('a');
+    resultElement.href = link.url;
+    resultElement.textContent = link.title;
+    resultsContainer.appendChild(resultElement);
   });
 }
