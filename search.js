@@ -10,7 +10,7 @@ function search() {
   // For simplicity, let's assume we have a list of predefined links
   var links = [
     { title: 'Google', url: 'https://www.google.com' },
-    { title: 'Stack Overflow', url: 'https://stackoverflow.com' },
+    { title: '1v1.lol', url: 'https://math-is-cool.netlify.app/1v1lol' },
     { title: 'GitHub', url: 'https://github.com' }
     // Add more links as needed
   ];
