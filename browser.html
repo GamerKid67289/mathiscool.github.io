@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Search Browser</title>
+    <title>Search Browser</title>
 </head>
 <body>
-  <h1>Search Browser</h1>
-  <form action="https://www.google.com/search" method="get">
-    <input type="text" name="q" placeholder="Enter your search term">
-    <button type="submit">Search</button>
-  </form>
+    <form id="searchForm">
+        <input type="text" id="searchInput">
+        <button type="submit">Search</button>
+    </form>
+    <div id="searchResults"></div>
+
+    <script src="main.js"></script>
 </body>
 </html>
