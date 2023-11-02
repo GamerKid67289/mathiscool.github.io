@@ -2,48 +2,20 @@
 <html>
 <head>
     <title>Search Browser</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <form>
-        <input type="text" id="searchInput" placeholder="Enter your search query">
-        <button type="button" onclick="search()">Search</button>
-    </form>
-
-    <div id="searchResults">
-        <!-- The search results will be displayed here -->
+    <header>
+        <h1>Search Browser</h1>
+    </header>
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Type your search query">
+        <button onclick="search()">Search</button>
+    </div>
+    <div id="search-results">
+        <!-- Search results will be dynamically appended here -->
     </div>
 
-    <script>
-        function search() {
-            var searchQuery = document.getElementById("searchInput").value;
-
-            // Perform a search using safari.com's database
-            // You can use AJAX or API calls to retrieve search results
-
-            // For simplicity, let's assume we have a hard-coded list of results
-            var results = [
-                { title: "math is cool", url: "https://math-is-cool.netlify.app" },
-                { title: "Result 2", url: "https://example.com/result2" },
-                { title: "Result 3", url: "https://example.com/result3" }
-            ];
-
-            displayResults(results);
-        }
-
-        function displayResults(results) {
-            var searchResultsDiv = document.getElementById("searchResults");
-            searchResultsDiv.innerHTML = "";
-
-            for (var i = 0; i < results.length; i++) {
-                var result = results[i];
-                var resultLink = document.createElement("a");
-                resultLink.href = result.url;
-                resultLink.textContent = result.title;
-
-                searchResultsDiv.appendChild(resultLink);
-                searchResultsDiv.appendChild(document.createElement("br"));
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
