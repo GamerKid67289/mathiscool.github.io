@@ -1,18 +1,81 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Custom Search Browser</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Search Browser</title>
+  <style>
+    .search-history {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    .search-history li {
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <div id="search-container">
-    <input type="text" id="search-input" placeholder="Search...">
-    <button onclick="search()">Go</button>
-  </div>
-  <div id="search-results">
-    <!-- Search results will be displayed here -->
-  </div>
-
-  <script src="script.js"></script>
+  <input type="text" id="search-input" placeholder="Enter your search term">
+  <button onclick="search()">Search</button>
+  
+  <h3>Search History:</h3>
+  <ul id="search-history" class="search-history"></ul>
+  
+  <script>
+    // Function to store search history
+    function storeSearchHistory(searchTerm) {
+      let searchHistory = localStorage.getItem('searchHistory');
+      if (!searchHistory) {
+        searchHistory = [];
+      } else {
+        searchHistory = JSON.parse(searchHistory);
+      }
+      
+      searchHistory.unshift(searchTerm);
+      localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
+    }
+    
+    // Function to display search history
+    function displaySearchHistory() {
+      let searchHistory = JSON.parse(localStorage.getItem('searchHistory'));
+      let searchHistoryList = document.getElementById('search-history');
+      searchHistoryList.innerHTML = '';
+      
+      if (searchHistory && searchHistory.length > 0) {
+        searchHistory.forEach(function(searchTerm) {
+          let li = document.createElement('li');
+          li.textContent = searchTerm;
+          searchHistoryList.appendChild(li);
+        });
+      }
+      
+      // Add click event listener to each search history item
+      let searchItems = searchHistoryList.getElementsByTagName('li');
+      for (let i = 0; i < searchItems.length; i++) {
+        searchItems[i].addEventListener('click', function() {
+          document.getElementById('search-input').value = this.textContent;
+        });
+      }
+    }
+    
+    // Function to perform search
+    function search() {
+      let searchTerm = document.getElementById('search-input').value;
+      if (searchTerm) {
+        storeSearchHistory(searchTerm);
+      
+        // Perform your search logic here
+        console.log('Searching for:', searchTerm);
+        
+        // Clear search input
+        document.getElementById('search-input').value = '';
+        
+        // Display updated search history
+        displaySearchHistory();
+      }
+    }
+    
+    // Display initial search history on page load
+    displaySearchHistory();
+  </script>
 </body>
 </html>
