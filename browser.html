@@ -5,13 +5,13 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-  <h1>Custom Search Browser</h1>
-  <div class="search">
-    <input type="text" id="searchInput" placeholder="Search...">
-    <button onclick="search()">Search</button>
+  <div id="search-container">
+    <input type="text" id="search-input" placeholder="Search...">
+    <button onclick="search()">Go</button>
   </div>
-
-  <div id="results"></div>
+  <div id="search-results">
+    <!-- Search results will be displayed here -->
+  </div>
 
   <script src="script.js"></script>
 </body>
