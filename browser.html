@@ -1,3 +1,6 @@
+Certainly! Here's an updated version of the code with a simple search algorithm implemented:
+
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +27,7 @@
             document.getElementById("searchResults").innerHTML = "";
 
             // Get the search query from the input field
-            var query = document.getElementById("searchInput").value;
+            var query = document.getElementById("searchInput").value.toLowerCase();
 
             // Perform search based on query
             var searchResults = performSearch(query);
@@ -34,45 +37,63 @@
         }
 
         function performSearch(query) {
-            // Perform your search logic here
-            // You can use APIs or implement your own search algorithm
+            var results = [];
 
-            // For simplicity, let's hardcode some results based on the query
-            if (query === "math is cool") {
-                return [
-                    { label: "Math is Cool", link: "https://math-is-cool.netlify.app" }
-                ];
-            } else if (query === "games 10x10") {
-                return [
-                    { label: "Games 10x10", link: "https://sites.google.com/view/games10x10" }
-                ];
-            } else if (query === "project fun") {
-                return [
-                    { label: "Project Fun", link: "https://sites.google.com/view/project-fun2"}
-                ];
-            } else if (query ==="Games") {
-              return [
-              { label: "1v1 lol", link: "1v1lol.html"},
-              { label: "Raft Wars", link: "raftwars.html"},
-              { label: 'Slope', link: 'SLOPE.html' },
-              { label: 'Retro Bowl', link: 'retro-bowl.html' },
-              { label: 'Fnaf1', link: 'fnaf1.html' },
-              { label: 'Geometry Dash Meltdown', link: 'geometry-dash-meltdown.html' },
-              { label: 'Geometry Dash Subzero', link: 'Geometry-dash-Subzero.html' },
-              { label: 'Geometry Dash', link: 'geometry-dash.html' },
-              { label: 'Getting over It', link: 'getting-over-it.html' },
-              { label: 'Drift Boss', link: '2 Player/Drift-Boss.html' },
-              { label: 'Vex 7', link: 'vex7.html' },
-              { label: 'Moto X3m', link: 'motox3m.html' },
-              { label: 'Pacman', link: 'Pacman.html' },
-              { label: 'Paper.io', link: 'Paper.io.html' },
-              { label: 'A Dance Of Fire And Ice', link: 'A-Dance-Of-Fire-And-Ice.html' },
-              ];
+for (var keyword in keywords) {
+    var keywordMatches = keywords[keyword];
+    
+    // Check if any query word matches the keyword
+    for (var i = 0; i < queryWords.length; i++) {
+        var queryWord = queryWords[i];
+        
+        if (keyword.includes(queryWord)) {
+            // Add the keyword matches to the search results
+            results = results.concat(keywordMatches);
+            // Break the loop if a match is found
+            break;
+        }
+    }
+}
+
+
+           var keywords = {
+    "math": [
+        { label: "Math is Cool", link: "https://math-is-cool.netlify.app" }
+    ],
+    "project": [
+        { label: "Project Fun", link: "https://sites.google.com/view/project-fun" }
+    ],
+    // Add more keywords and results as needed
+};
+
+            };
+
+            // Split the query into individual words
+            var queryWords = query.split(" ");
+
+            // Iterate over the keywords and check for matches
+            for (var keyword in keywords) {
+                var keywordMatches = keywords[keyword];
+                var keywordFound = false;
+
+                // Check if any query word matches the keyword
+                for (var i = 0; i < queryWords.length; i++) {
+                    var queryWord = queryWords[i];
+                    if (keyword.includes(queryWord)) {
+                        // Add the keyword matches to the search results
+                        results = results.concat(keywordMatches);
+                        keywordFound = true;
+                        break;
+                    }
+                }
+
+                if (keywordFound) {
+                    // If keyword found, stop further iteration
+                    break;
+                }
             }
 
-
-            // No matching results found
-            return [];
+            return results;
         }
 
         function displayResults(results) {
