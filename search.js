@@ -12,7 +12,9 @@ function search() {
     { title: 'Google', url: 'https://www.google.com' },
     { title: '1v1.lol', url: 'https://math-is-cool.netlify.app/1v1lol' },
     { title: 'GitHub', url: 'https://github.com' }
-    // Add more links as needed
+    { title: 'Project Fun Unblocked Games', url: 'https://sites.google.com/view/project-fun2' }
+    { title: 'Math Is Cool Unblocked Games', url: 'https://math-is-cool.netlify.app'}
+    { title: 'Games 10x10 Unblocked Games', url: 'https://sites.google.com/view/games10x10'}
   ];
 
   // Filter the links based on the search query
