@@ -13,20 +13,20 @@
       justify-content: center;
       height: 100vh;
       font-family: Arial, sans-serif;
+      overflow: hidden; /* Prevent scrollbar */
     }
 
-    .loader {
-      border: 8px solid #f3f3f3;
-      border-top: 8px solid #3498db;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      animation: spin 1s linear infinite;
+    .progress-bar-container {
+      width: 300px;
+      height: 20px;
+      background-color: #f3f3f3;
     }
 
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+    .progress-bar {
+      height: 100%;
+      width: 0;
+      background-color: #3498db;
+      transition: width 1s ease-in-out;
     }
 
     .loading-text {
@@ -37,7 +37,32 @@
   </style>
 </head>
 <body>
-  <div class="loader"></div>
+  <div class="progress-bar-container">
+    <div class="progress-bar"></div>
+  </div>
   <div class="loading-text">Loading...</div>
+
+  <script>
+    // Simulate Loading Progress
+    function simulateProgress() {
+      var progressBar = document.querySelector('.progress-bar');
+      var width = 0;
+      var increment = 1;
+      var speed = 20; // Adjust as needed
+
+      var timerId = setInterval(function() {
+        if (width >= 100) {
+          clearInterval(timerId);
+          window.location.href = 'main-page.html'; // Redirect to main-page.html here
+        } else {
+          width += increment;
+          progressBar.style.width = width + '%';
+        }
+      }, speed);
+    }
+
+    // Call the simulateProgress function after page load
+    window.addEventListener('load', simulateProgress);
+  </script>
 </body>
 </html>
