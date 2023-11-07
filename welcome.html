@@ -47,6 +47,7 @@
 </head>
 <body>
 	<div class="logo"></div>
+	<button class="button" style="display: none;">Go to Main Page</button>
 	<script>
 		// Set the logo to fade in and out, then slide up
 		var logo = document.querySelector('.logo');
@@ -64,7 +65,13 @@
 			logo.classList.remove('slide-up');
 			logo.classList.add('slide-up-complete');
 			document.body.style.background = 'url(main-page.html) no-repeat center center fixed';
+			document.querySelector('.button').style.display = 'block';
 		}, 3000);
+
+		// Add an event listener to the button to redirect to the main page
+		document.querySelector('.button').addEventListener('click', function() {
+			window.location.href = 'main-page.html';
+		});
 	</script>
 </body>
 </html>
