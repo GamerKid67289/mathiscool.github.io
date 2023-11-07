@@ -1,9 +1,6 @@
 html{
-    
+  height: 100vh;  
 }
-
-
-
 
 body, h1, h2, p, ul, li {
     margin: 0;
@@ -11,9 +8,14 @@ body, h1, h2, p, ul, li {
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: gothambook;
     background-color: #00eeff;
     color: #0048ff;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
 }
 
 .container {
