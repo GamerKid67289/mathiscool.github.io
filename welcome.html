@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Welcome to My Site</title>
+	<title>Welcome to Math Is Cool</title>
 	<style>
 		/* Style the logo */
 		.logo {
@@ -11,7 +11,7 @@
 			height: 200px;
 			background-image: url('Untitled.png');
 			background-size: cover;
-			animation: fadeIn 2s, fadeOut 2s, slideUp 2s;
+			animation: fadeIn 2s, fadeOut 2s, slideUp 3s;
 		}
 
 		/* Animation */
@@ -58,6 +58,13 @@
 				logo.classList.add('slide-up');
 			});
 		});
+
+		// Wait for 3 seconds, then slide up the background and display the main page
+		setTimeout(function() {
+			logo.classList.remove('slide-up');
+			logo.classList.add('slide-up-complete');
+			document.body.style.background = 'url(main-page.html) no-repeat center center fixed';
+		}, 3000);
 	</script>
 </body>
 </html>
