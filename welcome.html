@@ -1,47 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Math is Cool</title>
-  <style>
-    body {
-      background-color: #f2f2f2;
-      font-family: Arial, sans-serif;
-    }
-    h1 {
-      color: #333;
-      font-size: 36px;
-      margin-top: 50px;
-    }
-    p {
-      animation: fadeIn 1s ease-in;
-    }
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
-    button {
-      animation: slideInRight 1s ease-in;
-      href: main-page.html;
-    }
-    @keyframes slideInRight {
-      0% {
-        transform: translateX(-100%);
-      }
-      100% {
-        transform: translateX(0);
-      }
-    }
-  </style>
+	<title>Welcome to My Site</title>
+	<style>
+		/* Style the logo */
+		.logo {
+			display: block;
+			margin: 0 auto;
+			width: 200px;
+			height: 200px;
+			background-image: url('logo.png');
+			background-size: cover;
+			animation: fadeIn 2s, fadeOut 2s, slideUp 2s;
+		}
+
+		/* Animation */
+		@keyframes fadeIn {
+			0% {
+				opacity: 0;
+			}
+			100% {
+				opacity: 1;
+			}
+		}
+
+		@keyframes fadeOut {
+			0% {
+				opacity: 1;
+			}
+			100% {
+				opacity: 0;
+			}
+		}
+
+		@keyframes slideUp {
+			0% {
+				transform: translateY(100%);
+				opacity: 0;
+			}
+			100% {
+				transform: translateY(0);
+				opacity: 1;
+			}
+		}
+	</style>
 </head>
 <body>
-  <h1>Welcome to Math is Cool!</h1>
-  <p>This website is all about making games unblocked and accesible to anyone in school.</p>
-  <a href="main-page.html">
-  <button>click here to have some fun!</button>
-  </a>
+	<div class="logo"></div>
+	<script>
+		// Set the logo to fade in and out, then slide up
+		var logo = document.querySelector('.logo');
+		logo.addEventListener('animationend', function() {
+			logo.classList.remove('fade-in');
+			logo.classList.add('fade-out');
+			logo.addEventListener('animationend', function() {
+				logo.classList.remove('fade-out');
+				logo.classList.add('slide-up');
+			});
+		});
+	</script>
 </body>
 </html>
