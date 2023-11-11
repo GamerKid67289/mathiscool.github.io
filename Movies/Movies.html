@@ -5,10 +5,11 @@
     <link rel="shortcut icon" href="Untitled.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="/style.css">
     <style>
-      /* This CSS code is optional and will add some padding to the content */
-      body {
-        padding: 20px;
+      /* This CSS code sets the height of the div element and enables scrolling */
+      #content {
+        height: 400px;
         overflow-y: scroll;
+        padding: 20px;
       }
       </style>
 </head>
@@ -16,6 +17,7 @@
     <header>
         <h1>Movies</h1>
     </header>
+    <div id="content">
     <main>
     <a href="/Movies/Despicable Me.html">
       <img src="/Screen Shot 2023-11-10 at 7.20.11 PM.png" width="366" height="509">
@@ -35,11 +37,7 @@
         <a href="/Movies/Boss-Baby.html">
           <img src="/Screen Shot 2023-11-10 at 7.14.45 PM.png" width="366" height="509">
         </a>
-        <script>
-          window.addEventListener('DOMContentLoaded', (event) => {
-              document.body.style.overflowY = "scroll";
-          });
-          </script>
     </main>
+  </div>
 </body>
 </html>
