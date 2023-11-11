@@ -4,9 +4,14 @@
     <title>Movies</title>
     <link rel="shortcut icon" href="Untitled.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="/style.css">
+    <style>
+      /* This CSS code is optional and will add some padding to the content */
+      body {
+        padding: 20px;
+      }
+      </style>
 </head>
 <body>
-    <div class="container">
     <header>
         <h1>Movies</h1>
     </header>
@@ -30,6 +35,10 @@
           <img src="/Screen Shot 2023-11-10 at 7.14.45 PM.png" width="366" height="509">
         </a>
     </main>
-  </div>
+    <script>
+      window.addEventListener('DOMContentLoaded', (event) => {
+          document.body.style.overflowY = "scroll";
+      });
+      </script>
 </body>
 </html>
