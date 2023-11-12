@@ -1,9 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html
+ 
+lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confetti</title>
+
+    
+<meta
+ 
+charset="UTF-8">
+
+    
+<meta
+ 
+name="viewport"
+ 
+content="width=device-width, initial-scale=1.0">
+
+    
+<title>Confetti</title>
     <style>
         body {
             margin: 0;
@@ -28,7 +44,7 @@
     <script>
         var canvas = document.getElementById('canvas');
 
-        for (var i = 0; i < 5; i++) {
+        function createConfetti() {
             confetti({
                 particleCount: 100,
                 colors: ['#000000'],
@@ -47,7 +63,11 @@
                     }
                 }
             })(canvas);
+
+            setTimeout(createConfetti, 1000);
         }
+
+        createConfetti();
     </script>
 </body>
 </html>
